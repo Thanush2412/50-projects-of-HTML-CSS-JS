@@ -1,0 +1,46 @@
+📄 Project Overview
+This is a personal portfolio webpage built using HTML and CSS. It serves as a single-page layout to showcase a user's profile, educational background, projects, and contact form. The structure is organized into semantic sections for easy readability and accessibility.
+
+🧱 Layout Structure
+🔹 1. Header Section (.header)
+Displays the user’s profile picture, name, and profession.
+
+Uses Flexbox to center content vertically and horizontally.
+
+Designed to look like a banner or introduction section.
+
+🔹 2. About Section (.about-section)
+Provides a brief "About Me" introduction.
+
+Includes a section heading styled with centered text and spacing.
+
+🔹 3. Education Section (.education-container)
+Lists educational details using card-style boxes.
+
+Each .education-item is a bordered box with hover effects.
+
+Flexbox wraps items responsively on different screen sizes.
+
+🔹 4. Projects Section (.projects-container)
+Similar to the education layout.
+
+Showcases individual project items in card format with hover interactivity.
+
+🔹 5. Contact Section (.contact-section)
+Includes a simple contact form with fields and a submit button.
+
+The form is styled with a bold red theme, shadows, and input styling for usability.
+
+🎯 Purpose
+To create a responsive, visually structured portfolio page using only HTML and CSS.
+
+Demonstrates usage of:
+
+Flexbox for layout
+
+Semantic HTML sections
+
+Interactive hover styles
+
+Form design with accessibility in mind
+
