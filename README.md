@@ -4,16 +4,16 @@
 This repository contains 50 simple and practical projects created using **HTML**, **CSS**, and **JavaScript**. These projects are great for beginners who want to enhance their skills and build a strong foundation in web development. The projects cover various topics, including interactive applications, user interfaces, and utilities that will help you improve your coding abilities and build a diverse portfolio.
 
 ## Table of Contents
-1. [Digital Clock](#1-digital-clock)
-2. [Word Counter](#2-word-counter)
-3. [Typing Speed Test](#3-typing-speed-test)
-4. [Countdown Timer](#4-countdown-timer)
-5. [Basic Calculator](#5-basic-calculator)
-6. [To-Do List](#6-to-do-list)
-7. [Subject Timetable Generator](#7-subject-timetable-generator)
-8. [Random Motivational Quote Generator](#8-random-motivational-quote-generator)
-9. [Form Validation](#9-form-validation)
-10. [Emoji Feedback Form](#10-emoji-feedback-form)
+1. [Responsive Image Slider (No JS)](#1-responsive-image-slider-no-js)
+2. [CSS-Only Form Design](#2-css-only-form-design)
+3. [Navigation Bar (Navbar)](#3-navigation-bar-navbar)
+4. [Accordion (CSS-Only)](#4-accordion-css-only)
+5. [Modal Popup (CSS-Only)](#5-modal-popup-css-only)
+6. [CSS Cards with Hover Effects](#6-css-cards-with-hover-effects)
+7. [Styled Buttons Collection](#7-styled-buttons-collection)
+8. [Progress Bar (CSS Only)](#8-progress-bar-css-only)
+9. [CSS Tooltip](#9-css-tooltip)
+10. [Tab Switcher (CSS-Only)](#10-tab-switcher-css-only)
 11. [Flashcard App](#11-flashcard-app)
 12. [Typing Speed Test](#12-typing-speed-test)
 13. [Attendance Tracker](#13-attendance-tracker)
@@ -57,52 +57,72 @@ This repository contains 50 simple and practical projects created using **HTML**
 
 ## Project List
 
-### 1. Digital Clock
-- A simple digital clock that displays the current time (hours, minutes, seconds) and updates in real-time.
-- Technologies: HTML, CSS, JavaScript.
+### 1. Responsive Image Slider (No JS)
+- A carousel slider built using only HTML and CSS with radio buttons or checkboxes.
+- Display one image at a time with smooth transitions.
+- Features navigation arrows and indicator dots via labels.
+- Technologies: HTML, CSS.
 
-### 2. Word Counter
-- An app that counts the number of words typed into a text box.
-- Technologies: HTML, CSS, JavaScript.
+### 2. CSS-Only Form Design
+- A stylish contact form with Name, Email, and Message fields.
+- Well-designed input fields with custom styling on focus and hover states.
+- Includes placeholder styling and validation visual cues.
+- Technologies: HTML, CSS.
 
-### 3. Typing Speed Test
-- A tool to measure how fast you can type a given text.
-- Technologies: HTML, CSS, JavaScript.
+### 3. Navigation Bar (Navbar)
+- A responsive navigation bar that works on all screen sizes.
+- Includes active link highlight and smooth hover transitions.
+- Adapts between horizontal and vertical layouts using media queries.
+- Technologies: HTML, CSS.
 
-### 4. Countdown Timer
-- A countdown timer to countdown from a specific time to zero.
-- Technologies: HTML, CSS, JavaScript.
+### 4. Accordion (CSS-Only)
+- Expandable FAQ-style sections without JavaScript.
+- Uses hidden checkboxes or radio buttons with the `:checked` selector.
+- Smooth transitions between collapsed and expanded states.
+- Technologies: HTML, CSS.
 
-### 5. Basic Calculator
-- A simple calculator that can perform basic arithmetic operations.
-- Technologies: HTML, CSS, JavaScript.
+### 5. Modal Popup (CSS-Only)
+- A popup overlay that appears without JavaScript.
+- Uses checkbox/radio button hack with labels to trigger visibility.
+- Features fixed position overlay and centered content box.
+- Technologies: HTML, CSS.
 
-### 6. To-Do List
-- A to-do list app where users can add, remove, and mark tasks as completed.
-- Technologies: HTML, CSS, JavaScript.
+### 6. CSS Cards with Hover Effects
+- A collection of content or product cards with interactive hover effects.
+- Scale, shadow, and color transitions when users hover.
+- Organized in a responsive flex or grid layout.
+- Technologies: HTML, CSS.
 
-### 7. Subject Timetable Generator
-- Create a timetable for students by entering subject names and times.
-- Technologies: HTML, CSS, JavaScript.
+### 7. Styled Buttons Collection
+- A showcase of various button styles and animations.
+- Includes rounded, ghost, gradient, and outline variations.
+- Features hover animations and active state styling.
+- Technologies: HTML, CSS.
 
-### 8. Random Motivational Quote Generator
-- Display random motivational quotes each time the user clicks a button.
-- Technologies: HTML, CSS, JavaScript.
+### 8. Progress Bar (CSS Only)
+- Static or animated progress bars to visualize completion.
+- Uses width properties or transform scale with transitions.
+- Includes styled labels and tooltips using pseudo-elements.
+- Technologies: HTML, CSS.
 
-### 9. Form Validation
-- Create a form and validate the inputs like name, email, and phone number.
-- Technologies: HTML, CSS, JavaScript.
+### 9. CSS Tooltip
+- Hover-triggered information tooltips using CSS pseudo-elements.
+- Positioned absolutely with custom arrows pointing to elements.
+- Features appearance transitions and optional delays.
+- Technologies: HTML, CSS.
 
-### 10. Emoji Feedback Form
-- A form where users select emojis to provide feedback on a service or product.
-- Technologies: HTML, CSS, JavaScript.
+### 10. Tab Switcher (CSS-Only)
+- A tabbed interface without JavaScript using radio buttons.
+- Active tab highlighting and content panel switching via `:checked` selector.
+- Clean design with smooth transitions between tabs.
+- Technologies: HTML, CSS.
 
 ### 11. Flashcard App
 - A flashcard-based learning app that displays questions and answers.
 - Technologies: HTML, CSS, JavaScript.
 
-### 12. Typing Speed Test (Repetition)
-- Same as project 3 with additional features or improvements.
+### 12. Typing Speed Test
+- A tool to measure how fast you can type a given text.
 - Technologies: HTML, CSS, JavaScript.
 
 ### 13. Attendance Tracker
