@@ -60,7 +60,6 @@ This repository contains 50 simple and practical projects created using **HTML**
 ### 1. Responsive Image Slider (No JS)
 - A carousel slider built using only HTML and CSS with radio buttons or checkboxes.
 - Display one image at a time with smooth transitions.
-- Features navigation arrows and indicator dots via labels.
 - Technologies: HTML, CSS.
 
 ### 2. CSS-Only Form Design
