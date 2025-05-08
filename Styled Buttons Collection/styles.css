@@ -1,0 +1,67 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.main{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 25px;
+}
+
+.btn-container{
+    height: 100px;
+    
+    background-color:rgba(255, 255, 255, 0.64);
+    box-shadow: 2px 12px 12px 12px rgba(58, 57, 57, 0.64);
+    display: flex;
+    border-radius: 15px;
+    width: 50%;
+    justify-content: center;
+    gap: 25px;
+    align-items: center;
+}
+
+.round-btn ,.ghost-btn ,.outline-btn,.gradient-btn{
+    width: 150px;
+    font-size: 15px;
+    height: 50px;
+    border: none;
+}
+.round-btn{
+    transition: background-color 0.7s ease-in;
+    background-color: blueviolet;
+}
+.round-btn:hover ,.ghost-btn:hover{
+    background-color: crimson;
+    color: white;
+    border-radius: 10px;
+}
+
+.ghost-btn{
+   
+    background-color: transparent;
+    color: crimson;
+    transition: background-color 0.7s ease-in;
+}
+.gradient-btn{
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+  color: white;
+}
+.gradient-btn:hover{
+    filter: brightness(2.1);
+    border-radius: 10px;
+    transition: filter 0.7s ease-in;
+}
+
+.outline-btn{
+    background: none;
+    border: 1px solid green;
+}
+.outline-btn:hover{
+    background: green;
+    color: white;
+}
