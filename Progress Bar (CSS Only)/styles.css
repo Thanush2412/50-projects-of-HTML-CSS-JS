@@ -1,0 +1,42 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.title{
+    text-align: center;
+    font-size: 25px;
+}
+
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    gap: 25px;
+    flex-direction: column;
+}
+
+.Progress-continer{
+    width: 100%;
+    max-width: 500px;
+    height: 15px;
+    overflow: hidden;
+    border-radius: 6px;
+    background-color: black;
+    
+}
+
+.Progress-bar{
+    width: 80%;
+    background-color: rgb(35, 98, 153);
+    height: 15px;
+    border-radius: 5px;
+    animation: fillbar 2s ease-out;
+}
+
+@keyframes fillbar {
+    0%{ width: 0;}
+    100% {width: 80%;}
+    
+}
