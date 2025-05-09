@@ -1,0 +1,65 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    gap:50px;
+}
+
+.title{
+    font-size: 25px;
+}
+
+.btn{
+    width: 150px;
+    height: 40px;
+    background-color: crimson;
+    border:none ;
+    color: white;
+    border-radius: 10px;
+}
+
+.tip-inner{
+    display: inline;
+    position: relative;
+}
+
+.tip{
+    
+    background-color: rgba(8, 3, 3, 0.916);
+    color: white;
+    position: absolute;
+    visibility: hidden;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+   
+}
+.btn:hover{
+    cursor: pointer;
+}
+.tip-inner:hover .tip{
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 1s ease-in-out;
+    width: 250px;
+    left: -30%;
+    border-radius: 5px;
+    margin-top: -80px;
+}
+
+.Tooltip{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+}
