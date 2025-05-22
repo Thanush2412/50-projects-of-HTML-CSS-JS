@@ -1,37 +1,37 @@
-*{
+* {
     padding: 0;
     margin: 0;
 }
 
-.main{
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
-    gap:50px;
+.main {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
 }
 
-.title{
+.title {
     font-size: 25px;
+    margin-bottom: 20px;
 }
 
-.btn{
+.btn {
     width: 150px;
     height: 40px;
     background-color: crimson;
-    border:none ;
+    border: none;
     color: white;
     border-radius: 10px;
+    cursor: pointer;
 }
 
-.tip-inner{
-    display: inline;
+.tip-inner {
     position: relative;
+    display: inline-block;
 }
 
-.tip{
-    
+.tip {
     background-color: rgba(8, 3, 3, 0.916);
     color: white;
     position: absolute;
@@ -41,25 +41,19 @@
     align-items: center;
     justify-content: center;
     opacity: 0;
-   
-}
-.btn:hover{
-    cursor: pointer;
-}
-.tip-inner:hover .tip{
-    opacity: 1;
-    visibility: visible;
-    transition: opacity 1s ease-in-out;
-    width: 250px;
-    left: -30%;
+    transition: opacity 0.3s ease-in-out;
     border-radius: 5px;
-    margin-top: -80px;
+    width: 250px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: -73px;
 }
 
-.Tooltip{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 10vh;
+.btn:hover {
+    cursor: pointer;
+}
+
+.tip-inner:hover .tip {
+    opacity: 1;
+    visibility: visible;
 }

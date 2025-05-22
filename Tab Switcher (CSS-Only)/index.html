@@ -1,36 +1,39 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tab Switcher</title>
+  <title>Centered Tab Switcher</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
- <section class="main">
-  <section class="sec">
-  <section class="title">
-    Tabs using HTML css
-  </section>
 
-  <section class="Tabs">
-    <input class="btn" type="radio" name="tab" id="Tab1" checked>
-    <label for="Tab1">Tab 1</label>
+  <div class="tab-container">
+    <input type="radio" name="tabs" id="tab1" checked>
+    <input type="radio" name="tabs" id="tab2">
+    <input type="radio" name="tabs" id="tab3">
 
-    <input class="btn" type="radio" name="tab" id="Tab2">
-    <label for="Tab2">Tab 2</label>
-    <div class="contents" id="content1">
-      A flashcard-based learning app that displays questions and answers.
-Technologies: HTML, CSS, JavaScript.
+    <div class="tabs">
+      <label for="tab1" class="tab">Tab 1</label>
+      <label for="tab2" class="tab">Tab 2</label>
+      <label for="tab3" class="tab">Tab 3</label>
     </div>
 
-    <div class="contents" id="content2">
-      
-Technologies: HTML, CSS, JavaScript.A flashcard-based learning app that displays questions and answers.
+    <div class="content">
+      <div class="content-item" id="content1">
+        <h2>Content for Tab 1</h2>
+        <p>This is the content displayed when Tab 1 is active.</p>
+      </div>
+      <div class="content-item" id="content2">
+        <h2>Content for Tab 2</h2>
+        <p>This is the content displayed when Tab 2 is active.</p>
+      </div>
+      <div class="content-item" id="content3">
+        <h2>Content for Tab 3</h2>
+        <p>This is the content displayed when Tab 3 is active.</p>
+      </div>
     </div>
-  </section>
-  
-    
-</section>
- </section>
+  </div>
+
 </body>
 </html>
