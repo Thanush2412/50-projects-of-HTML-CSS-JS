@@ -1,0 +1,44 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.title {
+    text-align: center;
+    font-size: 25px;
+}
+
+.main {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.Progress-continer {
+    width: 100%;
+    max-width: 500px;
+    height: 15px;
+    overflow: hidden;
+    border-radius: 6px;
+    background-color: black;
+    margin-top: 20px;
+}
+
+.Progress-bar {
+    width: 80%;
+    background-color: rgb(35, 98, 153);
+    height: 15px;
+    border-radius: 5px;
+    animation: fillbar 2s ease-out;
+}
+
+@keyframes fillbar {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 80%;
+    }
+}

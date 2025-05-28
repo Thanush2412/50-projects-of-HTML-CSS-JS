@@ -1,0 +1,101 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Arial', sans-serif;
+  background-color: #e9ecef;
+  padding: 0;
+  margin: 0;
+  display: block;
+}
+
+body {
+  text-align: center;
+  overflow: hidden;
+}
+
+.tab-container {
+  width: 100%;
+  max-width: 600px;
+  background-color: #fff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.tabs {
+  width: 100%;
+  background-color: #f8f9fa;
+  border-bottom: 2px solid #ddd;
+  white-space: nowrap;
+}
+
+.tab {
+  display: inline-block;
+  width: calc(100% / 3);
+  padding: 12px 0;
+  text-align: center;
+  cursor: pointer;
+  color: #6c757d;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  background-color: #f8f9fa;
+  box-sizing: border-box;
+}
+
+.tab:hover {
+  background-color: #e9ecef;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+#tab1:checked ~ .tabs label:nth-child(1),
+#tab2:checked ~ .tabs label:nth-child(2),
+#tab3:checked ~ .tabs label:nth-child(3) {
+  background-color: #007bff;
+  color: #fff;
+}
+
+#tab1:not(:checked) ~ .tabs label:nth-child(1),
+#tab2:not(:checked) ~ .tabs label:nth-child(2),
+#tab3:not(:checked) ~ .tabs label:nth-child(3) {
+  background-color: #f8f9fa;
+  color: #6c757d;
+}
+
+.content {
+  display: block;
+  padding: 20px;
+}
+
+.content-item {
+  display: none;
+  padding: 20px;
+  font-size: 18px;
+  color: #333;
+  text-align: center;
+}
+
+.content-item h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+}
+
+#tab1:checked ~ .content #content1,
+#tab2:checked ~ .content #content2,
+#tab3:checked ~ .content #content3 {
+  display: block;
+}

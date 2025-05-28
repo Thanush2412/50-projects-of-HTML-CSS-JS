@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    display: block;
+}
+
+.main {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+.btn-container {
+    background-color: rgba(255, 255, 255, 0.64);
+    box-shadow: 2px 12px 12px 12px rgba(58, 57, 57, 0.64);
+    border-radius: 15px;
+    padding: 20px;
+    display: inline-block;
+    width: 50%;
+}
+
+.round-btn, .ghost-btn, .outline-btn, .gradient-btn {
+    width: 150px;
+    font-size: 15px;
+    height: 50px;
+    border: none;
+    margin: 0 10px 10px 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+.round-btn {
+    background-color: blueviolet;
+}
+
+.round-btn:hover, .ghost-btn:hover {
+    background-color: crimson;
+    color: white;
+    border-radius: 10px;
+}
+
+.ghost-btn {
+    background-color: transparent;
+    color: crimson;
+}
+
+.gradient-btn {
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    color: white;
+}
+
+.gradient-btn:hover {
+    filter: brightness(2.1);
+    border-radius: 10px;
+}
+
+.outline-btn {
+    background: none;
+    border: 1px solid green;
+}
+
+.outline-btn:hover {
+    background: green;
+    color: white;
+}

@@ -1,0 +1,40 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.accordion {
+  background-color: black;
+  color: white;
+  width: 300px;
+  margin: 20px auto;
+}
+
+.accordion-item {
+  border-bottom: 1px solid #ccc;
+}
+
+.accordion-item input {
+  display: none;
+}
+
+.accordion-item label {
+  display: block;
+  background: #333;
+  color: white;
+  padding: 15px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.accordion-item .content {
+  display: none;
+  background-color: #444;
+  color: white;
+  padding: 15px;
+}
+
+.accordion-item input:checked ~ .content {
+  display: block;
+}

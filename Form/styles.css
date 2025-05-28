@@ -1,0 +1,64 @@
+*{
+    margin:0;
+    padding: 0;
+    
+}
+
+.Form-container{
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    
+}
+
+.Form{
+    display: flex;
+    flex-direction: column;
+    row-gap: 25px;
+    width: 550px;
+    height: 350px;
+    justify-content: center;
+    align-items:center;
+    background-color: rgba(208, 228, 246, 0.888);
+    box-shadow: 2px 15px 15px 2px rgb(208, 228, 246);
+    border-radius: 25px;
+    padding: 10px;
+}
+
+.form-elements label{
+    margin-right: 25px;
+    font-size: 20px;
+}
+
+.form-elements input{
+    width: 180px;
+    height: 40px;
+    border-radius:5px ;
+    border: solid 2px black;
+    padding-left: 10px;
+
+}
+
+.form-elements input:focus{
+    outline: none;
+    border: #f05136 2px solid;
+}
+
+.form-elements button{
+    width: 100px;
+    height: 35px;
+}
+
+.form-elements button{
+    border: crimson 2px solid;
+    border-radius: 5px;
+}
+
+.form-elements button:hover{
+    background-color: crimson;
+    color: white;
+    cursor: pointer;
+}
