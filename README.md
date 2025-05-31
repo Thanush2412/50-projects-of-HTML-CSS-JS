@@ -20,15 +20,15 @@ This repository contains 50 simple and practical projects created using **HTML**
 14. [Scroll-Based Progress Bar](#14-scroll-based-progress-bar)
 15. [Sticky Notes Board](#15-sticky-notes-board)
 16. [Light/Dark Mode Toggle](#16-lightdark-mode-toggle)
-17. [Random Name Generator](#17-random-name-generator)
-18. [Stopwatch App](#18-stopwatch-app)
-19. [Classroom Timer with Alarm](#19-classroom-timer-with-alarm)
-20. [Image Slider/Carousel](#20-image-slidercarousel)
-21. [True/False Quiz App](#21-truefalse-quiz-app)
-22. [Interactive Quiz App](#22-interactive-quiz-app)
-23. [Math Game (Addition/Subtraction Practice)](#23-math-game-additionsubtraction-practice)
-24. [Daily Planner](#24-daily-planner)
-25. [Student Marks Calculator](#25-student-marks-calculator)
+17. [JavaScript Counter](#17-javascript-counter)
+18. [Interactive Form Validation](#18-interactive-form-validation)
+19. [To-Do List App](#19-to-do-list-app)
+20. [Random Name Generator](#20-random-name-generator)
+21. [Stopwatch App](#21-stopwatch-app)
+22. [Image Slider/Carousel](#22-image-slidercarousel)
+23. [Simple Calculator](#23-simple-calculator)
+24. [Memory Matching Game](#24-memory-matching-game)
+25. [Weather Dashboard](#25-weather-dashboard)
 26. [Student Progress Tracker](#26-student-progress-tracker)
 27. [Drag & Drop Seating Plan](#27-drag-drop-seating-plan)
 28. [Virtual Classroom Board](#28-virtual-classroom-board)
@@ -122,11 +122,14 @@ This repository contains 50 simple and practical projects created using **HTML**
 - Technologies: HTML, CSS.
 
 ### 12. CSS Grid Layouts
-- Grid Item Placement and Spanning: Learn to place and span grid items using grid lines and areas for flexible layouts.
-- Responsive Grid Layout with Auto-fill and Auto-fit: Create responsive grids that adjust columns automatically with auto-fill and auto-fit.
-- Using Grid Template Areas for Semantic Layouts: Define named grid areas to create semantic and readable grid layouts.
-- Aligning and Justifying Grid Items: Control grid item alignment inside cells using CSS grid alignment properties.
-- Technologies: HTML, CSS (Grid).
+- A comprehensive demonstration of CSS Grid capabilities with multiple examples on a single page.
+- Learn fundamental grid concepts: grid-template-columns, grid-template-rows, gap properties.
+- Master item placement techniques using grid-column, grid-row, and span values.
+- Create responsive layouts with minmax(), auto-fill, and auto-fit functions.
+- Implement semantic layouts using grid-template-areas for intuitive page structure.
+- Practice alignment techniques with justify-items, align-items, justify-content, and align-content.
+- Compare different approaches to achieve the same layout goals.
+- Technologies: HTML, CSS (Grid only, no flexbox or positioning).
 
 ### 13. Attendance Tracker
 - Track attendance for classes and show a percentage of students present.
