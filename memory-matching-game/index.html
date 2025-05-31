@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Matching Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Memory Matching Game</h1>
+        
+        <div class="game-info">
+            <div class="stats">
+                <div class="moves">
+                    <span>Moves:</span>
+                    <span id="moves-count">0</span>
+                </div>
+                <div class="timer">
+                    <span>Time:</span>
+                    <span id="time">00:00</span>
+                </div>
+            </div>
+            <button id="restart">Restart</button>
+        </div>
+        
+        <div class="game-container">
+            <div class="card" data-card="1">
+                <div class="card-front"></div>
+                <div class="card-back">🍎</div>
+            </div>
+            <div class="card" data-card="1">
+                <div class="card-front"></div>
+                <div class="card-back">🍎</div>
+            </div>
+            <div class="card" data-card="2">
+                <div class="card-front"></div>
+                <div class="card-back">🍌</div>
+            </div>
+            <div class="card" data-card="2">
+                <div class="card-front"></div>
+                <div class="card-back">🍌</div>
+            </div>
+            <div class="card" data-card="3">
+                <div class="card-front"></div>
+                <div class="card-back">🍒</div>
+            </div>
+            <div class="card" data-card="3">
+                <div class="card-front"></div>
+                <div class="card-back">🍒</div>
+            </div>
+            <div class="card" data-card="4">
+                <div class="card-front"></div>
+                <div class="card-back">🍇</div>
+            </div>
+            <div class="card" data-card="4">
+                <div class="card-front"></div>
+                <div class="card-back">🍇</div>
+            </div>
+            <div class="card" data-card="5">
+                <div class="card-front"></div>
+                <div class="card-back">🍊</div>
+            </div>
+            <div class="card" data-card="5">
+                <div class="card-front"></div>
+                <div class="card-back">🍊</div>
+            </div>
+            <div class="card" data-card="6">
+                <div class="card-front"></div>
+                <div class="card-back">🍋</div>
+            </div>
+            <div class="card" data-card="6">
+                <div class="card-front"></div>
+                <div class="card-back">🍋</div>
+            </div>
+            <div class="card" data-card="7">
+                <div class="card-front"></div>
+                <div class="card-back">🍉</div>
+            </div>
+            <div class="card" data-card="7">
+                <div class="card-front"></div>
+                <div class="card-back">🍉</div>
+            </div>
+            <div class="card" data-card="8">
+                <div class="card-front"></div>
+                <div class="card-back">🥑</div>
+            </div>
+            <div class="card" data-card="8">
+                <div class="card-front"></div>
+                <div class="card-back">🥑</div>
+            </div>
+        </div>
+        
+        <div class="result-screen" id="result">
+            <div class="result-message">
+                <h2>Congratulations!</h2>
+                <p>You completed the game in <span id="result-moves">0</span> moves and <span id="result-time">00:00</span> time.</p>
+                <button id="play-again">Play Again</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
