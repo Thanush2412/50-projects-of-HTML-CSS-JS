@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Progress Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Student Progress Tracker</h1>
+            <div class="tab-controls">
+                <button class="tab-btn active" data-tab="dashboard">Dashboard</button>
+                <button class="tab-btn" data-tab="add-data">Add Data</button>
+            </div>
+        </header>
+        
+        <div id="dashboard" class="tab-content active">
+            <div class="student-info">
+                <div class="profile">
+                    <div class="avatar">
+                        <span>JS</span>
+                    </div>
+                    <div class="details">
+                        <h2>John Smith</h2>
+                        <p>Student ID: ST12345</p>
+                        <p>Grade: 10th</p>
+                    </div>
+                </div>
+                
+                <div class="summary">
+                    <div class="stat-card">
+                        <h3>Average</h3>
+                        <p class="value" id="average-value">--</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Attendance</h3>
+                        <p class="value" id="attendance-value">--</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Rank</h3>
+                        <p class="value" id="rank-value">--</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chart-container">
+                <div class="chart-header">
+                    <h2>Subject Performance</h2>
+                    <div class="chart-controls">
+                        <select id="chart-type">
+                            <option value="line">Line Chart</option>
+                            <option value="bar">Bar Chart</option>
+                            <option value="radar">Radar Chart</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="chart-wrapper">
+                    <canvas id="progress-chart"></canvas>
+                </div>
+            </div>
+            
+            <div class="subject-details">
+                <h2>Subject Details</h2>
+                <table id="subjects-table">
+                    <thead>
+                        <tr>
+                            <th>Subject</th>
+                            <th>Jan</th>
+                            <th>Feb</th>
+                            <th>Mar</th>
+                            <th>Apr</th>
+                            <th>May</th>
+                            <th>Average</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Table rows will be populated by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="student-selector">
+                <h2>Select Student</h2>
+                <select id="student-select">
+                    <!-- Options will be populated by JavaScript -->
+                </select>
+            </div>
+        </div>
+        
+        <div id="add-data" class="tab-content">
+            <div class="form-section">
+                <h2>Add New Student</h2>
+                <form id="add-student-form">
+                    <div class="form-group">
+                        <label for="student-name">Student Name</label>
+                        <input type="text" id="student-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="student-id">Student ID</label>
+                        <input type="text" id="student-id" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="student-grade">Grade</label>
+                        <input type="text" id="student-grade" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="student-attendance">Attendance (%)</label>
+                        <input type="number" id="student-attendance" min="0" max="100" required>
+                    </div>
+                    <button type="submit" class="btn">Add Student</button>
+                </form>
+            </div>
+            
+            <div class="form-section">
+                <h2>Add Subject Marks</h2>
+                <form id="add-marks-form">
+                    <div class="form-group">
+                        <label for="marks-student">Select Student</label>
+                        <select id="marks-student" required>
+                            <!-- Options will be populated by JavaScript -->
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject-name">Subject</label>
+                        <input type="text" id="subject-name" required>
+                    </div>
+                    <div class="form-group marks-grid">
+                        <div>
+                            <label for="jan-marks">January</label>
+                            <input type="number" id="jan-marks" min="0" max="100" required>
+                        </div>
+                        <div>
+                            <label for="feb-marks">February</label>
+                            <input type="number" id="feb-marks" min="0" max="100" required>
+                        </div>
+                        <div>
+                            <label for="mar-marks">March</label>
+                            <input type="number" id="mar-marks" min="0" max="100" required>
+                        </div>
+                        <div>
+                            <label for="apr-marks">April</label>
+                            <input type="number" id="apr-marks" min="0" max="100" required>
+                        </div>
+                        <div>
+                            <label for="may-marks">May</label>
+                            <input type="number" id="may-marks" min="0" max="100" required>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn">Add Marks</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
