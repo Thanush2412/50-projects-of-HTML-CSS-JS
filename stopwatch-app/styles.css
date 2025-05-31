@@ -1,0 +1,162 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    padding: 30px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.stopwatch {
+    display: grid;
+    gap: 20px;
+}
+
+.time-display {
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+    font-size: 48px;
+    font-family: monospace;
+    font-weight: bold;
+    color: #333;
+}
+
+.colon {
+    display: inline-block;
+    width: 20px;
+    text-align: center;
+}
+
+.controls {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+}
+
+button {
+    background-color: #4a6fa5;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 12px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover:not(:disabled) {
+    background-color: #3a5a80;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+#start-btn {
+    background-color: #27ae60;
+}
+
+#start-btn:hover:not(:disabled) {
+    background-color: #219653;
+}
+
+#stop-btn {
+    background-color: #e74c3c;
+}
+
+#stop-btn:hover:not(:disabled) {
+    background-color: #c0392b;
+}
+
+.laps-container {
+    margin-top: 20px;
+}
+
+h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+#laps-list {
+    list-style-type: none;
+    max-height: 200px;
+    overflow-y: auto;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+#laps-list li {
+    padding: 8px 10px;
+    border-bottom: 1px solid #eee;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 10px;
+}
+
+#laps-list li:last-child {
+    border-bottom: none;
+}
+
+.lap-number {
+    font-weight: bold;
+    color: #4a6fa5;
+}
+
+.instructions {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.instructions ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+.instructions li {
+    margin-bottom: 5px;
+    color: #666;
+}
+
+@media (max-width: 400px) {
+    .time-display {
+        font-size: 36px;
+    }
+    
+    button {
+        padding: 10px;
+        font-size: 14px;
+    }
+}

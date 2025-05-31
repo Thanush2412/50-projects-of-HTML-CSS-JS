@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stopwatch App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Stopwatch App</h1>
+        
+        <div class="stopwatch">
+            <div class="time-display">
+                <span id="minutes">00</span>
+                <span class="colon">:</span>
+                <span id="seconds">00</span>
+                <span class="colon">:</span>
+                <span id="milliseconds">00</span>
+            </div>
+            
+            <div class="controls">
+                <button id="start-btn">Start</button>
+                <button id="stop-btn" disabled>Stop</button>
+                <button id="reset-btn" disabled>Reset</button>
+            </div>
+            
+            <div class="laps-container">
+                <h2>Lap Times</h2>
+                <ul id="laps-list"></ul>
+            </div>
+        </div>
+        
+        <div class="instructions">
+            <h3>How to Use:</h3>
+            <ul>
+                <li>Press <strong>Start</strong> to begin the stopwatch</li>
+                <li>Press <strong>Stop</strong> to pause the stopwatch</li>
+                <li>Press <strong>Reset</strong> to clear the stopwatch</li>
+                <li>When the stopwatch is running, press <strong>Start</strong> again to record a lap time</li>
+            </ul>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
