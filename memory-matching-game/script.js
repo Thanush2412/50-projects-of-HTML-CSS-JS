@@ -1,82 +1,72 @@
 const cards = document.querySelectorAll('.card');
 const movesCount = document.getElementById('moves-count');
 const timeValue = document.getElementById('time');
-const resultScreen = document.getElementById('result');
-const resultMoves = document.getElementById('result-moves');
-const resultTime = document.getElementById('result-time');
 const restartButton = document.getElementById('restart');
 const playAgainButton = document.getElementById('play-again');
+const resultScreen = document.getElementById('result');
+const finalMoves = document.getElementById('final-moves');
+const finalTime = document.getElementById('final-time');
 
 let moves = 0;
 let time = 0;
-let timer = null;
+let timer;
 let firstCard = null;
 let secondCard = null;
-let isLocked = false;
-let matchedPairs = 0;
+let flippedCards = 0;
+let canFlip = true;
+
+const animals = ['🐶', '🐱', '🐰', '🦊', '🐻', '🐼', '🐨', '🦁'];
 
 function startGame() {
-    resetGame();
-    shuffleCards();
-    startTimer();
-}
-
-function resetGame() {
     moves = 0;
     time = 0;
-    matchedPairs = 0;
+    flippedCards = 0;
     firstCard = null;
     secondCard = null;
-    isLocked = false;
+    canFlip = true;
     
-    movesCount.textContent = moves;
+    movesCount.textContent = '0';
     timeValue.textContent = '00:00';
+    resultScreen.classList.add('hide');
     
+    clearInterval(timer);
+    timer = setInterval(updateTimer, 1000);
+    
+    resetCards();
+    setupCards();
+}
+
+function resetCards() {
     cards.forEach(card => {
         card.classList.remove('flipped', 'matched');
+        card.removeEventListener('click', flipCard);
+        card.addEventListener('click', flipCard);
     });
-    
-    resultScreen.classList.remove('show');
-    
-    if (timer) {
-        clearInterval(timer);
-        timer = null;
-    }
 }
 
-function shuffleCards() {
-    let positions = Array.from(Array(cards.length).keys());
-    
-    for (let i = positions.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [positions[i], positions[j]] = [positions[j], positions[i]];
-    }
+function setupCards() {
+    let cardPairs = [...animals, ...animals];
+    shuffle(cardPairs);
     
     cards.forEach((card, index) => {
-        card.style.order = positions[index];
+        card.style.order = index;
+        card.querySelector('.card-back').textContent = cardPairs[index];
+        card.setAttribute('data-animal', cardPairs[index]);
     });
 }
 
-function startTimer() {
-    timer = setInterval(() => {
-        time++;
-        updateTimer();
-    }, 1000);
-}
-
-function updateTimer() {
-    const minutes = Math.floor(time / 60);
-    const seconds = time % 60;
-    
-    const minutesText = minutes < 10 ? `0${minutes}` : minutes;
-    const secondsText = seconds < 10 ? `0${seconds}` : seconds;
-    
-    timeValue.textContent = `${minutesText}:${secondsText}`;
+function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
 }
 
 function flipCard() {
-    if (isLocked) return;
+    if (!canFlip) return;
     if (this === firstCard) return;
+    if (this.classList.contains('matched')) return;
     
     this.classList.add('flipped');
     
@@ -86,76 +76,71 @@ function flipCard() {
     }
     
     secondCard = this;
-    isLocked = true;
+    canFlip = false;
+    moves++;
+    movesCount.textContent = moves;
     
-    checkForMatch();
-    updateMoves();
+    checkMatch();
 }
 
-function checkForMatch() {
-    const isMatch = firstCard.dataset.card === secondCard.dataset.card;
+function checkMatch() {
+    let isMatch = firstCard.getAttribute('data-animal') === secondCard.getAttribute('data-animal');
     
     if (isMatch) {
-        disableCards();
-        matchedPairs++;
-        
-        if (matchedPairs === cards.length / 2) {
-            endGame();
-        }
+        markAsMatched();
     } else {
         unflipCards();
     }
 }
 
-function disableCards() {
+function markAsMatched() {
     firstCard.classList.add('matched');
     secondCard.classList.add('matched');
     
-    resetCardState();
+    firstCard.removeEventListener('click', flipCard);
+    secondCard.removeEventListener('click', flipCard);
+    
+    flippedCards += 2;
+    resetTurn();
+    
+    if (flippedCards === cards.length) {
+        setTimeout(showResult, 500);
+    }
 }
 
 function unflipCards() {
     setTimeout(() => {
         firstCard.classList.remove('flipped');
         secondCard.classList.remove('flipped');
-        
-        resetCardState();
+        resetTurn();
     }, 1000);
 }
 
-function resetCardState() {
+function resetTurn() {
     firstCard = null;
     secondCard = null;
-    isLocked = false;
+    canFlip = true;
 }
 
-function updateMoves() {
-    moves++;
-    movesCount.textContent = moves;
+function updateTimer() {
+    time++;
+    let minutes = Math.floor(time / 60);
+    let seconds = time % 60;
+    
+    minutes = minutes < 10 ? '0' + minutes : minutes;
+    seconds = seconds < 10 ? '0' + seconds : seconds;
+    
+    timeValue.textContent = minutes + ':' + seconds;
 }
 
-function endGame() {
+function showResult() {
     clearInterval(timer);
-    
-    const minutes = Math.floor(time / 60);
-    const seconds = time % 60;
-    
-    const minutesText = minutes < 10 ? `0${minutes}` : minutes;
-    const secondsText = seconds < 10 ? `0${seconds}` : seconds;
-    
-    resultMoves.textContent = moves;
-    resultTime.textContent = `${minutesText}:${secondsText}`;
-    
-    setTimeout(() => {
-        resultScreen.classList.add('show');
-    }, 1000);
+    finalMoves.textContent = moves;
+    finalTime.textContent = timeValue.textContent;
+    resultScreen.classList.remove('hide');
 }
-
-cards.forEach(card => {
-    card.addEventListener('click', flipCard);
-});
 
 restartButton.addEventListener('click', startGame);
 playAgainButton.addEventListener('click', startGame);
 
-window.onload = startGame;
+startGame();

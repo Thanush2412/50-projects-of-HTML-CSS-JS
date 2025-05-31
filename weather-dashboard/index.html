@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Weather Dashboard</h1>
+        
+        <div class="search-container">
+            <input type="text" id="city-input" placeholder="Enter city name..." value="Chennai">
+            <button id="search-btn">Search</button>
+        </div>
+        
+        <div class="weather-container">
+            <div class="current-weather">
+                <div class="weather-header">
+                    <h2 id="city-name">Chennai</h2>
+                    <p id="current-date">Loading...</p>
+                </div>
+                
+                <div class="weather-info">
+                    <div class="temperature">
+                        <h3 id="temperature">--°C</h3>
+                        <p id="feels-like">Feels like: --°C</p>
+                    </div>
+                    
+                    <div class="weather-details">
+                        <div class="detail">
+                            <span class="label">Condition:</span>
+                            <span id="condition">--</span>
+                        </div>
+                        <div class="detail">
+                            <span class="label">Humidity:</span>
+                            <span id="humidity">--%</span>
+                        </div>
+                        <div class="detail">
+                            <span class="label">Wind:</span>
+                            <span id="wind">-- km/h</span>
+                        </div>
+                        <div class="detail">
+                            <span class="label">Pressure:</span>
+                            <span id="pressure">-- mb</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="forecast">
+                <h3>3-Day Forecast</h3>
+                <div class="forecast-container" id="forecast-container">
+                    <!-- Forecast items will be added here by JavaScript -->
+                </div>
+            </div>
+        </div>
+        
+        <div id="error-message" class="error-message hide">
+            City not found. Please try again.
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
