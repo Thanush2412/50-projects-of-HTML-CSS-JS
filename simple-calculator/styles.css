@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 350px;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.calculator {
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.display {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: right;
+    min-height: 100px;
+    display: grid;
+    grid-template-rows: auto auto;
+    gap: 5px;
+    word-break: break-all;
+}
+
+.previous-operand {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 16px;
+    min-height: 20px;
+}
+
+.current-operand {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.buttons-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background-color: #999;
+}
+
+button {
+    border: none;
+    background-color: #f9f9f9;
+    font-size: 18px;
+    padding: 20px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #e0e0e0;
+}
+
+button:active {
+    background-color: #d0d0d0;
+}
+
+.span-two {
+    grid-column: span 2;
+}
+
+#clear {
+    background-color: #ff8c8c;
+    color: white;
+}
+
+#clear:hover {
+    background-color: #ff6666;
+}
+
+#delete {
+    background-color: #ffb366;
+    color: white;
+}
+
+#delete:hover {
+    background-color: #ff9933;
+}
+
+.operator {
+    background-color: #66b3ff;
+    color: white;
+}
+
+.operator:hover {
+    background-color: #3399ff;
+}
+
+#equals {
+    background-color: #66cc99;
+    color: white;
+}
+
+#equals:hover {
+    background-color: #33bb77;
+}
+
+@media (max-width: 350px) {
+    button {
+        padding: 15px;
+        font-size: 16px;
+    }
+    
+    .display {
+        padding: 15px;
+        min-height: 80px;
+    }
+    
+    .current-operand {
+        font-size: 28px;
+    }
+}
