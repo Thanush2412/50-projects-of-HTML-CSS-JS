@@ -1,25 +1,21 @@
-const checkbox = document.getElementById('checkbox');
-const themeLabel = document.getElementById('theme-label');
+const bulbContainer = document.getElementById('bulb-container');
+const body = document.body;
 
-function changeTheme() {
-    if (checkbox.checked) {
-        document.body.classList.add('dark-theme');
-        themeLabel.textContent = 'Dark Mode';
-        localStorage.setItem('theme', 'dark');
-    } 
-    else {
-        document.body.classList.remove('dark-theme');
-        themeLabel.textContent = 'Light Mode';
+// Check for saved theme preference or use default
+const currentTheme = localStorage.getItem('theme') || 'light';
+
+// Apply the saved theme or default
+if (currentTheme === 'dark') {
+    body.classList.add('dark-theme');
+}
+
+// Toggle theme when bulb is clicked
+bulbContainer.addEventListener('click', function() {
+    if (body.classList.contains('dark-theme')) {
+        body.classList.remove('dark-theme');
         localStorage.setItem('theme', 'light');
+    } else {
+        body.classList.add('dark-theme');
+        localStorage.setItem('theme', 'dark');
     }
-}
-
-checkbox.addEventListener('change', changeTheme);
-
-const savedTheme = localStorage.getItem('theme');
-
-if (savedTheme === 'dark') {
-    checkbox.checked = true;
-    document.body.classList.add('dark-theme');
-    themeLabel.textContent = 'Dark Mode';
-}
+});

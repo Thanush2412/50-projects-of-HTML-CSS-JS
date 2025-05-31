@@ -3,63 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Light/Dark Mode Toggle</title>
+    <title>Light Bulb Toggle</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>Light/Dark Mode Toggle</h1>
-        <div class="theme-switch-container">
-            <label class="theme-switch" for="checkbox">
-                <input type="checkbox" id="checkbox" />
-                <div class="slider round"></div>
-            </label>
-            <span id="theme-label">Light Mode</span>
-        </div>
-    </header>
-
-    <main>
-        <section class="content">
-            <h2>About This Project</h2>
-            <p>This project demonstrates how to implement a light/dark theme switcher using CSS and JavaScript. The toggle button above allows you to switch between light and dark modes.</p>
-            
-            <h3>Key Features:</h3>
-            <ul>
-                <li>Simple toggle switch using CSS</li>
-                <li>Theme preference saved to localStorage</li>
-                <li>Automatic theme detection based on user's system preferences</li>
-                <li>Smooth transition between themes</li>
-            </ul>
-        </section>
-
-        <section class="content">
-            <h2>Sample Content</h2>
-            <p>This is some sample content to demonstrate the theme switching. Notice how the colors, backgrounds, and text all change when you toggle the theme.</p>
-            
-            <div class="card">
-                <h3>Card Example</h3>
-                <p>This card will change appearance based on the selected theme. The colors are defined using CSS and toggled with JavaScript.</p>
-                <button class="btn">Sample Button</button>
+    <div class="container">
+        <div class="bulb-container" id="bulb-container">
+            <div class="bulb">
+                <div class="bulb-top"></div>
+                <div class="bulb-middle"></div>
+                <div class="filament"></div>
+                <div class="bulb-base"></div>
             </div>
-        </section>
-
-        <section class="content">
-            <h2>Why Use Dark Mode?</h2>
-            <p>Dark mode can reduce eye strain in low-light conditions and save battery life on devices with OLED screens. It's also preferred by many users for aesthetic reasons.</p>
-            
-            <h3>Implementation Details:</h3>
-            <ul>
-                <li>Uses CSS to define color schemes</li>
-                <li>JavaScript handles the toggle functionality</li>
-                <li>LocalStorage remembers user preference</li>
-                <li>Respects user's system preferences with prefers-color-scheme media query</li>
-            </ul>
-        </section>
-    </main>
-
-    <footer>
-        <p>Light/Dark Mode Toggle - HTML, CSS, and JavaScript Project</p>
-    </footer>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
