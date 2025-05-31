@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Name Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Random Name Generator</h1>
+            <p>Generate random names from our predefined list or create completely random ones</p>
+        </header>
+        
+        <main>
+            <div class="generator-card">
+                <div class="options">
+                    <div class="option-group">
+                        <label for="nameType">Name Type:</label>
+                        <select id="nameType">
+                            <option value="full">Full Name</option>
+                            <option value="first">First Name Only</option>
+                            <option value="last">Last Name Only</option>
+                        </select>
+                    </div>
+                    
+                    <div class="option-group">
+                        <label for="gender">Gender:</label>
+                        <select id="gender">
+                            <option value="any">Any</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
+                    </div>
+                    
+                    <div class="option-group">
+                        <label for="nameOrigin">Origin:</label>
+                        <select id="nameOrigin">
+                            <option value="any">Any Origin</option>
+                            <option value="english">English</option>
+                            <option value="spanish">Spanish</option>
+                            <option value="french">French</option>
+                            <option value="german">German</option>
+                            <option value="italian">Italian</option>
+                            <option value="japanese">Japanese</option>
+                            <option value="chinese">Chinese</option>
+                            <option value="indian">Indian</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="quantity-selector">
+                    <label for="quantity">Number of Names:</label>
+                    <input type="number" id="quantity" min="1" max="10" value="1">
+                </div>
+                
+                <button id="generateBtn">Generate Names</button>
+                
+                <div class="result-container">
+                    <h2>Generated Names:</h2>
+                    <ul id="namesList"></ul>
+                </div>
+                
+                <div class="actions">
+                    <button id="copyBtn">Copy to Clipboard</button>
+                    <button id="clearBtn">Clear Results</button>
+                </div>
+            </div>
+            
+            <div class="history-card">
+                <h2>Name History</h2>
+                <p class="history-info">Your recently generated names will appear here</p>
+                <ul id="historyList"></ul>
+                <button id="clearHistoryBtn">Clear History</button>
+            </div>
+        </main>
+        
+        <footer>
+            <p>Random Name Generator - Part of 50 HTML, CSS, and JavaScript Projects</p>
+        </footer>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

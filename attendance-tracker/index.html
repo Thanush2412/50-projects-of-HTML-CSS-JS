@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Attendance Tracker</h1>
+            <div class="date">May 31, 2025</div>
+        </header>
+
+        <div class="attendance-summary">
+            <div class="percentage-container">
+                <div class="percentage">75%</div>
+                <div class="label">Present</div>
+            </div>
+            <div class="stats">
+                <div class="stat">
+                    <span class="value">15</span>
+                    <span class="label">Present</span>
+                </div>
+                <div class="stat">
+                    <span class="value">5</span>
+                    <span class="label">Absent</span>
+                </div>
+                <div class="stat">
+                    <span class="value">20</span>
+                    <span class="label">Total</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="legend">
+            <div class="legend-item">
+                <span class="status-indicator present"></span>
+                <span>Present</span>
+            </div>
+            <div class="legend-item">
+                <span class="status-indicator absent"></span>
+                <span>Absent</span>
+            </div>
+            <div class="legend-item">
+                <span class="status-indicator excused"></span>
+                <span>Excused</span>
+            </div>
+            <div class="legend-item">
+                <span class="status-indicator late"></span>
+                <span>Late</span>
+            </div>
+        </div>
+
+        <div class="student-roster">
+            <!-- Row 1 -->
+            <div class="student-card present">
+                <div class="student-photo">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="student-info">
+                    <h3>Alex Johnson</h3>
+                    <p>ID: 1001</p>
+                </div>
+                <div class="status-badge">Present</div>
+            </div>
+
+            <div class="student-card present">
+                <div class="student-photo">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="student-info">
+                    <h3>Samantha Lee</h3>
+                    <p>ID: 1002</p>
+                </div>
+                <div class="status-badge">Present</div>
+            </div>
+
+            <div class="student-card absent">
+                <div class="student-photo">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="student-info">
+                    <h3>Michael Brown</h3>
+                    <p>ID: 1003</p>
+                </div>
+                <div class="status-badge">Absent</div>
+            </div>
+
+            <div class="student-card present">
+                <div class="student-photo">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="student-info">
+                    <h3>Jessica Taylor</h3>
+                    <p>ID: 1004</p>
+                </div>
+                <div class="status-badge">Present</div>
+            </div>
+
+            <!-- Row 2 -->
+            <div class="student-card late">
+                <div class="student-photo">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="student-info">
+                    <h3>David Wilson</h3>
+                    <p>ID: 1005</p>
+                </div>
+                <div class="status-badge">Late</div>
+            </div>
+
+            <div class="student-card present">
+                <div class="student-photo">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="student-info">
+                    <h3>Emily Davis</h3>
+                    <p>ID: 1006</p>
+                </div>
+                <div class="status-badge">Present</div>
+            </div>
+
+            <div class="student-card excused">
+                <div class="student-photo">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="student-info">
+                    <h3>Ryan Martinez</h3>
+                    <p>ID: 1007</p>
+                </div>
+                <div class="status-badge">Excused</div>
+            </div>
+
+            <div class="student-card present">
+                <div class="student-photo">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="student-info">
+                    <h3>Olivia Anderson</h3>
+                    <p>ID: 1008</p>
+                </div>
+                <div class="status-badge">Present</div>
+            </div>
+
+            <!-- Row 3 -->
+            <div class="student-card present">
+                <div class="student-photo">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="student-info">
+                    <h3>Ethan Thomas</h3>
+                    <p>ID: 1009</p>
+                </div>
+                <div class="status-badge">Present</div>
+            </div>
+
+            <div class="student-card absent">
+                <div class="student-photo">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="student-info">
+                    <h3>Sophia Garcia</h3>
+                    <p>ID: 1010</p>
+                </div>
+                <div class="status-badge">Absent</div>
+            </div>
+
+            <div class="student-card present">
+                <div class="student-photo">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="student-info">
+                    <h3>Noah Robinson</h3>
+                    <p>ID: 1011</p>
+                </div>
+                <div class="status-badge">Present</div>
+            </div>
+
+            <div class="student-card present">
+                <div class="student-photo">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="student-info">
+                    <h3>Ava White</h3>
+                    <p>ID: 1012</p>
+                </div>
+                <div class="status-badge">Present</div>
+            </div>
+
+            <!-- Row 4 -->
+            <div class="student-card present">
+                <div class="student-photo">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="student-info">
+                    <h3>Liam Clark</h3>
+                    <p>ID: 1013</p>
+                </div>
+                <div class="status-badge">Present</div>
+            </div>
+
+            <div class="student-card present">
+                <div class="student-photo">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="student-info">
+                    <h3>Isabella Lewis</h3>
+                    <p>ID: 1014</p>
+                </div>
+                <div class="status-badge">Present</div>
+            </div>
+
+            <div class="student-card absent">
+                <div class="student-photo">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="student-info">
+                    <h3>Mason Scott</h3>
+                    <p>ID: 1015</p>
+                </div>
+                <div class="status-badge">Absent</div>
+            </div>
+
+            <div class="student-card present">
+                <div class="student-photo">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="student-info">
+                    <h3>Charlotte Green</h3>
+                    <p>ID: 1016</p>
+                </div>
+                <div class="status-badge">Present</div>
+            </div>
+
+            <!-- Row 5 -->
+            <div class="student-card present">
+                <div class="student-photo">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="student-info">
+                    <h3>James Baker</h3>
+                    <p>ID: 1017</p>
+                </div>
+                <div class="status-badge">Present</div>
+            </div>
+
+            <div class="student-card absent">
+                <div class="student-photo">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="student-info">
+                    <h3>Amelia Hill</h3>
+                    <p>ID: 1018</p>
+                </div>
+                <div class="status-badge">Absent</div>
+            </div>
+
+            <div class="student-card present">
+                <div class="student-photo">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="student-info">
+                    <h3>Benjamin Adams</h3>
+                    <p>ID: 1019</p>
+                </div>
+                <div class="status-badge">Present</div>
+            </div>
+
+            <div class="student-card excused">
+                <div class="student-photo">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="student-info">
+                    <h3>Mia Nelson</h3>
+                    <p>ID: 1020</p>
+                </div>
+                <div class="status-badge">Excused</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

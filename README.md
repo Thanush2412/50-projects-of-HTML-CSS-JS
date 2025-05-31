@@ -15,24 +15,24 @@ This repository contains 50 simple and practical projects created using **HTML**
 9. [CSS Tooltip](#9-css-tooltip)
 10. [Tab Switcher (CSS-Only)](#10-tab-switcher-css-only)
 11. [Flashcard App](#11-flashcard-app)
-12. [Typing Speed Test](#12-typing-speed-test)
+12. [CSS Grid Layouts](#12-css-grid-layouts)
 13. [Attendance Tracker](#13-attendance-tracker)
 14. [Scroll-Based Progress Bar](#14-scroll-based-progress-bar)
 15. [Sticky Notes Board](#15-sticky-notes-board)
-16. [Random Name Generator](#16-random-name-generator)
-17. [Light/Dark Mode Toggle](#17-lightdark-mode-toggle)
-18. [Simple Weather App](#18-simple-weather-app)
+16. [Light/Dark Mode Toggle](#16-lightdark-mode-toggle)
+17. [Random Name Generator](#17-random-name-generator)
+18. [Stopwatch App](#18-stopwatch-app)
 19. [Classroom Timer with Alarm](#19-classroom-timer-with-alarm)
 20. [Image Slider/Carousel](#20-image-slidercarousel)
-21. [Interactive Quiz App](#21-interactive-quiz-app)
-22. [Daily Planner](#22-daily-planner)
-23. [Stopwatch App](#23-stopwatch-app)
-24. [Drag & Drop Seating Plan](#24-drag-drop-seating-plan)
-25. [Virtual Classroom Board](#25-virtual-classroom-board)
-26. [True/False Quiz App](#26-truefalse-quiz-app)
-27. [Math Game (Addition/Subtraction Practice)](#27-math-game-additionsubtraction-practice)
-28. [Student Marks Calculator](#28-student-marks-calculator)
-29. [Student Progress Tracker](#29-student-progress-tracker)
+21. [True/False Quiz App](#21-truefalse-quiz-app)
+22. [Interactive Quiz App](#22-interactive-quiz-app)
+23. [Math Game (Addition/Subtraction Practice)](#23-math-game-additionsubtraction-practice)
+24. [Daily Planner](#24-daily-planner)
+25. [Student Marks Calculator](#25-student-marks-calculator)
+26. [Student Progress Tracker](#26-student-progress-tracker)
+27. [Drag & Drop Seating Plan](#27-drag-drop-seating-plan)
+28. [Virtual Classroom Board](#28-virtual-classroom-board)
+29. [Simple Weather App](#29-simple-weather-app)
 30. [Currency Converter](#30-currency-converter)
 31. [Expandable FAQ Section](#31-expandable-faq-section)
 32. [Attendance Pie Chart](#32-attendance-pie-chart)
@@ -121,10 +121,12 @@ This repository contains 50 simple and practical projects created using **HTML**
 - Cards arranged in a responsive grid layout with flip effect using CSS transforms.
 - Technologies: HTML, CSS.
 
-### 12. Typing Speed Test
-- A tool to measure how fast you can type a given text.
-- Keyboard layout and text display arranged in a CSS grid format.
-- Technologies: HTML, CSS.
+### 12. CSS Grid Layouts
+- Grid Item Placement and Spanning: Learn to place and span grid items using grid lines and areas for flexible layouts.
+- Responsive Grid Layout with Auto-fill and Auto-fit: Create responsive grids that adjust columns automatically with auto-fill and auto-fit.
+- Using Grid Template Areas for Semantic Layouts: Define named grid areas to create semantic and readable grid layouts.
+- Aligning and Justifying Grid Items: Control grid item alignment inside cells using CSS grid alignment properties.
+- Technologies: HTML, CSS (Grid).
 
 ### 13. Attendance Tracker
 - Track attendance for classes and show a percentage of students present.
@@ -141,61 +143,75 @@ This repository contains 50 simple and practical projects created using **HTML**
 - Different colored notes using CSS variables and grid positioning.
 - Technologies: HTML, CSS.
 
-### 16. Random Name Generator
-- Generate random names from a predefined list or randomly.
+### 16. Light/Dark Mode Toggle
+- Implement a light/dark theme switcher using CSS variables and JavaScript.
+- Learn about color schemes, accessibility, and user preferences.
 - Technologies: HTML, CSS, JavaScript.
 
-### 17. Light/Dark Mode Toggle
-- Implement a light/dark theme switcher.
+### 17. JavaScript Counter
+- A simple counter with increment, decrement, and reset buttons.
+- Introduction to DOM manipulation and event listeners.
+- Technologies: HTML, CSS, JavaScript (beginner-level).
+
+### 18. Interactive Form Validation
+- Form with real-time validation feedback using JavaScript.
+- Learn about input events, validation patterns, and conditional styling.
 - Technologies: HTML, CSS, JavaScript.
 
-### 18. Simple Weather App
-- Fetch and display weather information based on a city name using an API.
+### 19. To-Do List App
+- Create, check off, and delete tasks in a simple to-do list.
+- Introduction to array methods and local storage for data persistence.
+- Technologies: HTML, CSS, JavaScript.
+
+### 20. Random Name Generator
+- Generate random names from predefined lists based on origin and gender.
+- Practice array manipulation and random selection in JavaScript.
+- Technologies: HTML, CSS, JavaScript.
+
+### 21. Stopwatch App
+- A stopwatch to track elapsed time, with start, stop, and reset functionalities.
+- Learn about JavaScript timing functions (setInterval) and state management.
+- Technologies: HTML, CSS, JavaScript.
+
+### 22. Image Slider/Carousel
+- A dynamic image slider that transitions between images with navigation controls.
+- Learn about DOM manipulation and CSS transitions controlled by JavaScript.
+- Technologies: HTML, CSS, JavaScript.
+
+### 23. Simple Calculator
+- Basic calculator with addition, subtraction, multiplication, and division.
+- Practice handling user input and performing calculations with JavaScript.
+- Technologies: HTML, CSS, JavaScript.
+
+### 24. Memory Matching Game
+- Card matching game that tests memory by finding pairs of cards.
+- Learn about randomization, game state management, and animations.
+- Technologies: HTML, CSS, JavaScript.
+
+### 25. Weather Dashboard
+- Fetch and display weather information based on a city name using a weather API.
+- Introduction to API requests, async/await, and displaying dynamic data.
 - Technologies: HTML, CSS, JavaScript, API integration.
 
-### 19. Classroom Timer with Alarm
-- Set a timer for classroom activities and trigger an alarm when the time is up.
+### 26. Student Progress Tracker
+- Track and visualize student progress through various metrics over time.
+- Practice data visualization and progress representation.
 - Technologies: HTML, CSS, JavaScript.
 
-### 20. Image Slider/Carousel
-- A dynamic image slider that transitions between images.
+### 27. Drag & Drop Seating Plan
+- A seating plan where student names can be dragged and dropped into seats.
+- Learn about the HTML5 Drag and Drop API and position management.
 - Technologies: HTML, CSS, JavaScript.
 
-### 21. Interactive Quiz App
-- A quiz application that displays multiple-choice questions and keeps track of the score.
+### 28. Virtual Classroom Board
+- An interactive whiteboard that users can draw on with different tools.
+- Practice working with the Canvas API and drawing functions.
 - Technologies: HTML, CSS, JavaScript.
 
-### 22. Daily Planner
-- A simple planner to help users organize daily tasks.
-- Technologies: HTML, CSS, JavaScript.
-
-### 23. Stopwatch App
-- A stopwatch to track elapsed time, with start, stop, and reset functionalities.
-- Technologies: HTML, CSS, JavaScript.
-
-### 24. Drag & Drop Seating Plan
-- A seating plan where names can be dragged and dropped into seats.
-- Technologies: HTML, CSS, JavaScript.
-
-### 25. Virtual Classroom Board
-- An interactive whiteboard that users can draw on.
-- Technologies: HTML, CSS, JavaScript.
-
-### 26. True/False Quiz App
-- A simple quiz app with true/false questions.
-- Technologies: HTML, CSS, JavaScript.
-
-### 27. Math Game (Addition/Subtraction Practice)
-- A simple game that asks math questions for practice.
-- Technologies: HTML, CSS, JavaScript.
-
-### 28. Student Marks Calculator
-- Calculate total marks, percentage, and grade based on inputs for different subjects.
-- Technologies: HTML, CSS, JavaScript.
-
-### 29. Student Progress Tracker
-- Track the progress of students through various metrics and display the results.
-- Technologies: HTML, CSS, JavaScript.
+### 29. Simple Weather App
+- Fetch and display weather information based on a city name using a weather API.
+- Learn about API integration, fetch requests, and data presentation.
+- Technologies: HTML, CSS, JavaScript, API integration.
 
 ### 30. Currency Converter
 - Convert currencies based on live exchange rates using an API.

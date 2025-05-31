@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid Layouts</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>CSS Grid Layouts</h1>
+    </header>
+
+    <main>
+        <section class="section">
+            <h2>1. Grid Item Placement and Spanning</h2>
+            <div class="placement-grid">
+                <div class="grid-item item-1">Item 1<br>Spans 2 columns</div>
+                <div class="grid-item item-2">Item 2<br>Spans 2 rows</div>
+                <div class="grid-item item-3">Item 3</div>
+                <div class="grid-item item-4">Item 4</div>
+                <div class="grid-item item-5">Item 5<br>Spans 2 columns</div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>2. Responsive Grid Layout</h2>
+            
+            <h3>Auto-fill Example</h3>
+            <p>Creates as many columns as possible</p>
+            <div class="auto-fill-grid">
+                <div class="grid-item">Item 1</div>
+                <div class="grid-item">Item 2</div>
+                <div class="grid-item">Item 3</div>
+                <div class="grid-item">Item 4</div>
+                <div class="grid-item">Item 5</div>
+                <div class="grid-item">Item 6</div>
+            </div>
+            
+            <h3>Auto-fit Example</h3>
+            <p>Expands columns to fill available space</p>
+            <div class="auto-fit-grid">
+                <div class="grid-item">Item 1</div>
+                <div class="grid-item">Item 2</div>
+                <div class="grid-item">Item 3</div>
+                <div class="grid-item">Item 4</div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>3. Grid Template Areas</h2>
+            <div class="template-areas-grid">
+                <div class="grid-item header-area">Header</div>
+                <div class="grid-item sidebar-area">Sidebar</div>
+                <div class="grid-item main-area">Main Content</div>
+                <div class="grid-item ads-area">Ads</div>
+                <div class="grid-item footer-area">Footer</div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>4. Aligning and Justifying Grid Items</h2>
+            
+            <div class="alignment-container">
+                <div class="alignment-example">
+                    <h3>Start</h3>
+                    <div class="alignment-grid start-grid">
+                        <div class="grid-item">Item</div>
+                    </div>
+                </div>
+                
+                <div class="alignment-example">
+                    <h3>Center</h3>
+                    <div class="alignment-grid center-grid">
+                        <div class="grid-item">Item</div>
+                    </div>
+                </div>
+                
+                <div class="alignment-example">
+                    <h3>End</h3>
+                    <div class="alignment-grid end-grid">
+                        <div class="grid-item">Item</div>
+                    </div>
+                </div>
+                
+                <div class="alignment-example">
+                    <h3>Stretch</h3>
+                    <div class="alignment-grid stretch-grid">
+                        <div class="grid-item">Item</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>CSS Grid Layouts - Part of 50 HTML, CSS, and JavaScript Projects</p>
+    </footer>
+</body>
+</html>
