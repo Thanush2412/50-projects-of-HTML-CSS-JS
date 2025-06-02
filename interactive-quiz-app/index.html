@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Quiz App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div id="home" class="card flex-center flex-column">
+            <h1>Interactive Quiz</h1>
+            <button id="start-btn" class="btn">Start Quiz</button>
+            <button id="highscores-btn" class="btn">High Scores</button>
+        </div>
+
+        <div id="quiz" class="card hide">
+            <div class="quiz-header">
+                <div class="hud">
+                    <div class="hud-item">
+                        <p class="hud-prefix">Question</p>
+                        <h2 id="question-counter">1/10</h2>
+                    </div>
+                    <div class="hud-item">
+                        <p class="hud-prefix">Score</p>
+                        <h2 id="score">0</h2>
+                    </div>
+                </div>
+                <h2 id="question">What is the answer to this question?</h2>
+            </div>
+            <div class="choice-container">
+                <p class="choice-prefix">A</p>
+                <p class="choice-text" data-number="1">Choice 1</p>
+            </div>
+            <div class="choice-container">
+                <p class="choice-prefix">B</p>
+                <p class="choice-text" data-number="2">Choice 2</p>
+            </div>
+            <div class="choice-container">
+                <p class="choice-prefix">C</p>
+                <p class="choice-text" data-number="3">Choice 3</p>
+            </div>
+            <div class="choice-container">
+                <p class="choice-prefix">D</p>
+                <p class="choice-text" data-number="4">Choice 4</p>
+            </div>
+        </div>
+
+        <div id="end" class="card flex-center flex-column hide">
+            <h1>Quiz Complete!</h1>
+            <h2 id="final-score">0</h2>
+            <form>
+                <input type="text" id="username" placeholder="Enter your name">
+                <button type="submit" id="save-score-btn" class="btn" disabled>Save Score</button>
+            </form>
+            <button id="play-again-btn" class="btn">Play Again</button>
+            <button id="go-home-btn" class="btn">Go Home</button>
+        </div>
+
+        <div id="highscores" class="card flex-center flex-column hide">
+            <h1>High Scores</h1>
+            <ul id="highscores-list"></ul>
+            <button id="return-home-btn" class="btn">Go Home</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

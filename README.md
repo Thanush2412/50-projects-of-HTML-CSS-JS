@@ -211,18 +211,21 @@ This repository contains 50 simple and practical projects created using **HTML**
 - Practice working with the Canvas API and drawing functions.
 - Technologies: HTML, CSS, JavaScript.
 
-### 29. Simple Weather App
-- Fetch and display weather information based on a city name using a weather API.
-- Learn about API integration, fetch requests, and data presentation.
-- Technologies: HTML, CSS, JavaScript, API integration.
+### 29. Interactive Quiz App
+- Create a quiz application with multiple-choice questions and score tracking.
+- Learn about form handling, user input validation, and dynamic content generation.
+- Practice working with arrays, objects, and DOM manipulation.
+- Technologies: HTML, CSS, JavaScript.
 
 ### 30. Currency Converter
 - Convert currencies based on live exchange rates using an API.
 - Technologies: HTML, CSS, JavaScript, API integration.
 
-### 31. Expandable FAQ Section
-- A FAQ section where answers expand when clicked.
-- Technologies: HTML, CSS, JavaScript.
+### 31. Web Speech Application
+- Build an application that uses speech recognition and speech synthesis.
+- Create a voice-controlled interface or a text-to-speech reader.
+- Learn about the Web Speech API and browser audio capabilities.
+- Technologies: HTML, CSS, JavaScript, Web Speech API.
 
 ### 32. Attendance Pie Chart
 - Display a pie chart showing attendance statistics.
