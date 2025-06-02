@@ -227,9 +227,11 @@ This repository contains 50 simple and practical projects created using **HTML**
 - Learn about the Web Speech API and browser audio capabilities.
 - Technologies: HTML, CSS, JavaScript, Web Speech API.
 
-### 32. Attendance Pie Chart
-- Display a pie chart showing attendance statistics.
-- Technologies: HTML, CSS, JavaScript, Chart.js.
+### 32. Drag and Drop File Uploader
+- Create a modern file upload interface with drag and drop functionality.
+- Learn about the Drag and Drop API and File API.
+- Implement file type validation, progress indicators, and preview thumbnails.
+- Technologies: HTML, CSS, JavaScript.
 
 ### 33. Voice Notes Recorder
 - Record and playback voice notes.
