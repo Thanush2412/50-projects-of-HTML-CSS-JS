@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1>Currency Converter</h1>
+            
+            <div class="exchange-container">
+                <div class="currency-row">
+                    <div class="amount-container">
+                        <label for="amount-from">Amount</label>
+                        <input type="number" id="amount-from" placeholder="0" value="1">
+                    </div>
+                    <div class="currency-container">
+                        <label for="currency-from">From</label>
+                        <select id="currency-from"></select>
+                    </div>
+                </div>
+                
+                <div class="swap-rate-container">
+                    <button class="swap-btn" id="swap">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                            <polyline points="19 12 12 19 5 12"></polyline>
+                        </svg>
+                    </button>
+                    <div class="rate" id="rate">1 USD = 1 USD</div>
+                </div>
+                
+                <div class="currency-row">
+                    <div class="amount-container">
+                        <label for="amount-to">Amount</label>
+                        <input type="number" id="amount-to" placeholder="0" disabled>
+                    </div>
+                    <div class="currency-container">
+                        <label for="currency-to">To</label>
+                        <select id="currency-to"></select>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="convert-btn" id="convert">Convert</button>
+            
+            <div class="history-container">
+                <h2>Conversion History</h2>
+                <ul id="history-list"></ul>
+                <button class="clear-btn" id="clear-history">Clear History</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
