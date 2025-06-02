@@ -245,17 +245,29 @@ input:focus {
 
 .high-score {
     font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-    padding: 1rem;
-    background-color: white;
-    border-radius: 4px;
+    margin-bottom: 0.8rem;
+    padding: 1rem 1.5rem;
+    background-color: #f8f9fa;
+    border-radius: 50px;
     display: flex;
     justify-content: space-between;
-    border: 1px solid #ddd;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s;
+    font-weight: 500;
+}
+
+.high-score:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+}
+
+.high-score:nth-child(1) {
+    background: linear-gradient(90deg, rgba(106, 17, 203, 0.1), rgba(37, 117, 252, 0.1));
+    border-left: 4px solid #6a11cb;
 }
 
 .high-score:nth-child(even) {
-    background-color: #f8f9fa;
+    background-color: #f0f2f5;
 }
 
 @media screen and (max-width: 768px) {
@@ -263,11 +275,34 @@ input:focus {
         padding: 1rem;
     }
     
+    .card {
+        padding: 1.5rem;
+    }
+    
     h1 {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
     }
     
     .btn, input {
         width: 100%;
+        font-size: 1rem;
+        padding: 0.8rem 1.5rem;
+    }
+    
+    .choice-container {
+        font-size: 1rem;
+    }
+    
+    .choice-prefix {
+        padding: 0.8rem 1rem;
+        min-width: 50px;
+    }
+    
+    .choice-text {
+        padding: 0.8rem 1rem;
     }
 }
