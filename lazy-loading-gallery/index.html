@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lazy Loading Image Gallery</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Lazy Loading Image Gallery</h1>
+            <p>Using progressive blur-to-clear loading technique</p>
+        </header>
+        
+        <div class="gallery">
+            <!-- Images will be dynamically added here -->
+        </div>
+        
+        <section class="info-panel">
+            <h2>About This Project</h2>
+            <p>This project demonstrates the use of the native loading="lazy" attribute combined with CSS blur effects for a smooth loading experience.</p>
+            
+            <h3>New JavaScript Concepts:</h3>
+            <ul>
+                <li><strong>Native Lazy Loading:</strong> Using the HTML loading="lazy" attribute</li>
+                <li><strong>Progressive Image Loading:</strong> Blur-to-clear effect as images load</li>
+                <li><strong>IntersectionObserver:</strong> For advanced loading control and animations</li>
+            </ul>
+            
+            <h3>How It Works:</h3>
+            <p>Images start with a tiny blurred preview that progressively transitions to the full-quality image when loaded. The gallery uses a masonry-style layout for visual interest.</p>
+        </section>
+        
+        <div class="loading-indicator" id="loading-indicator">
+            <div class="spinner"></div>
+            <p>Loading more images...</p>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

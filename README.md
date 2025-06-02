@@ -261,9 +261,9 @@ This repository contains 50 simple and practical projects created using **HTML**
 - A calendar where users can add events for specific dates.
 - Technologies: HTML, CSS, JavaScript.
 
-### 40. Random Student Picker with History
-- Randomly pick students and keep a history of previous picks.
-- Technologies: HTML, CSS, JavaScript.
+### 40. Lazy Loading Image Gallery
+- Load images efficiently as they enter the viewport.
+- Technologies: HTML, CSS, JavaScript, Intersection Observer API.
 
 ### 41. Expense Tracker
 - Track daily expenses and calculate the total spending.
