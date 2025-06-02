@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive School Map</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Interactive School Map</h1>
+            <p>Click on different locations to learn more about our school</p>
+        </header>
+        
+        <div class="map-container">
+            <div class="map">
+                <!-- Map hotspots -->
+                <div class="hotspot" id="main-building" data-location="main-building"></div>
+                <div class="hotspot" id="library" data-location="library"></div>
+                <div class="hotspot" id="cafeteria" data-location="cafeteria"></div>
+                <div class="hotspot" id="gym" data-location="gym"></div>
+                <div class="hotspot" id="auditorium" data-location="auditorium"></div>
+                <div class="hotspot" id="science-lab" data-location="science-lab"></div>
+                <div class="hotspot" id="playground" data-location="playground"></div>
+                <div class="hotspot" id="parking" data-location="parking"></div>
+                
+                <!-- Map image -->
+                <img src="school-map.png" alt="School Map" class="map-image">
+                
+                <!-- Location labels -->
+                <span class="map-label" id="main-building-label">Main Building</span>
+                <span class="map-label" id="library-label">Library</span>
+                <span class="map-label" id="cafeteria-label">Cafeteria</span>
+                <span class="map-label" id="gym-label">Gymnasium</span>
+                <span class="map-label" id="auditorium-label">Auditorium</span>
+                <span class="map-label" id="science-lab-label">Science Lab</span>
+                <span class="map-label" id="playground-label">Playground</span>
+                <span class="map-label" id="parking-label">Parking</span>
+            </div>
+        </div>
+        
+        <div class="info-panel">
+            <div class="info-header">
+                <h2 id="location-title">Select a location</h2>
+                <button id="close-info" class="close-btn">&times;</button>
+            </div>
+            <div class="info-content">
+                <div id="location-image" class="location-image"></div>
+                <div id="location-description" class="location-description">
+                    Click on any highlighted area of the map to learn more about that location.
+                </div>
+                <div class="location-details">
+                    <div class="detail-item">
+                        <span class="detail-label">Hours:</span>
+                        <span id="location-hours" class="detail-value">-</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Capacity:</span>
+                        <span id="location-capacity" class="detail-value">-</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Contact:</span>
+                        <span id="location-contact" class="detail-value">-</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="legend">
+            <h3>Map Legend</h3>
+            <ul>
+                <li><span class="legend-marker academic"></span> Academic Buildings</li>
+                <li><span class="legend-marker facilities"></span> Facilities</li>
+                <li><span class="legend-marker recreation"></span> Recreation Areas</li>
+            </ul>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
