@@ -1,0 +1,161 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.month-navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.month-navigation button {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0 15px;
+}
+
+.weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-gap: 5px;
+}
+
+.day {
+    height: 40px;
+    display: grid;
+    place-items: center;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.day:hover {
+    background-color: #f0f0f0;
+}
+
+.day.today {
+    background-color: #e6f7ff;
+    font-weight: bold;
+}
+
+.day.selected {
+    background-color: #1890ff;
+    color: white;
+}
+
+.day.has-events {
+    position: relative;
+}
+
+.day.has-events::after {
+    content: "";
+    position: absolute;
+    bottom: 5px;
+    width: 5px;
+    height: 5px;
+    background-color: #1890ff;
+    border-radius: 50%;
+}
+
+.day.other-month {
+    color: #ccc;
+}
+
+.event-form {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    display: none;
+}
+
+.event-form.active {
+    display: block;
+}
+
+.form-group {
+    margin-bottom: 10px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.form-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#save-event {
+    background-color: #1890ff;
+    color: white;
+}
+
+#cancel-event {
+    background-color: #f5f5f5;
+}
+
+.events-list {
+    margin-top: 20px;
+}
+
+.event-item {
+    padding: 10px;
+    border-left: 3px solid #1890ff;
+    background-color: #f9f9f9;
+    margin-bottom: 5px;
+    border-radius: 0 4px 4px 0;
+}
+
+.event-time {
+    font-size: 0.8rem;
+    color: #666;
+}
