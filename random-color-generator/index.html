@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Color Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Random Color Generator</h1>
+        
+        <div class="color-display">
+            <div id="color-box" class="color-box"></div>
+            <div class="color-info">
+                <span id="color-value">#FFFFFF</span>
+                <button id="copy-btn" class="copy-btn">Copy</button>
+            </div>
+        </div>
+        
+        <div class="controls">
+            <button id="generate-btn" class="btn primary-btn">Generate Random Color</button>
+            <div class="format-options">
+                <label>
+                    <input type="radio" name="color-format" value="hex" checked>
+                    HEX
+                </label>
+                <label>
+                    <input type="radio" name="color-format" value="rgb">
+                    RGB
+                </label>
+                <label>
+                    <input type="radio" name="color-format" value="hsl">
+                    HSL
+                </label>
+            </div>
+        </div>
+        
+        <div class="color-history">
+            <h2>Color History</h2>
+            <div id="history-list" class="history-list"></div>
+        </div>
+        
+        <div class="info-box">
+            <h3>How It Works</h3>
+            <p>This app generates random colors and displays them in different formats:</p>
+            <ul>
+                <li><strong>HEX</strong>: #RRGGBB format (e.g., #FF5733)</li>
+                <li><strong>RGB</strong>: rgb(red, green, blue) with values from 0-255</li>
+                <li><strong>HSL</strong>: hsl(hue, saturation%, lightness%)</li>
+            </ul>
+            <p>Click on any color in the history to view it again.</p>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
