@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spelling Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Spelling Game</h1>
+        <div class="game-area">
+            <div class="level-select">
+                <button class="level-btn" data-level="easy">Easy</button>
+                <button class="level-btn" data-level="medium">Medium</button>
+                <button class="level-btn" data-level="hard">Hard</button>
+            </div>
+            
+            <div class="game-container">
+                <div class="word-image">
+                </div>
+                
+                <div class="word-hint">
+                    <p>Click "Start Game" to begin!</p>
+                </div>
+                
+                <div class="letter-input">
+                </div>
+                
+                <div class="keyboard">
+                </div>
+                
+                <div class="game-controls">
+                    <button id="start-btn">Start Game</button>
+                    <button id="hint-btn" disabled>Get Hint</button>
+                    <button id="skip-btn" disabled>Skip Word</button>
+                </div>
+                
+                <div class="score-display">
+                    <div class="score-item">
+                        <span>Score:</span>
+                        <span id="score">0</span>
+                    </div>
+                    <div class="score-item">
+                        <span>Hints Left:</span>
+                        <span id="hints-left">3</span>
+                    </div>
+                    <div class="score-item">
+                        <span>Words Completed:</span>
+                        <span id="words-completed">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="info-panel">
+            <h2>About This Game</h2>
+            <p>This spelling game uses the Web Speech API for text-to-speech pronunciation and introduces JavaScript Generators for word sequence management.</p>
+            <h3>How to Play:</h3>
+            <ol>
+                <li>Select a difficulty level</li>
+                <li>Click "Start Game" to begin</li>
+                <li>Listen to the word pronunciation</li>
+                <li>Type the correct spelling using the keyboard</li>
+                <li>Use hints if you get stuck (limited number available)</li>
+                <li>Complete as many words as you can!</li>
+            </ol>
+            <h3>New JavaScript Concepts:</h3>
+            <ul>
+                <li><strong>Generators & Iterators:</strong> Managing word sequences efficiently</li>
+                <li><strong>Speech Synthesis:</strong> Pronouncing words for the player</li>
+                <li><strong>Destructuring:</strong> Simplified variable assignment</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="modal" id="result-modal">
+        <div class="modal-content">
+            <h2 id="result-title">Correct!</h2>
+            <p id="result-message">You spelled the word correctly!</p>
+            <div class="result-word">
+                <span>Word: </span>
+                <span id="result-word">apple</span>
+            </div>
+            <button id="continue-btn">Continue</button>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
