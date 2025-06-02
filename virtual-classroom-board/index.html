@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Classroom Board</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Virtual Classroom Board</h1>
+        
+        <div class="toolbar">
+            <div class="tool-group">
+                <button id="pencil" class="tool active" title="Pencil">
+                    <svg viewBox="0 0 24 24" width="24" height="24">
+                        <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/>
+                    </svg>
+                </button>
+                <button id="eraser" class="tool" title="Eraser">
+                    <svg viewBox="0 0 24 24" width="24" height="24">
+                        <path d="M15.14 3c-.51 0-1.02.2-1.41.59L2.59 14.73c-.78.77-.78 2.04 0 2.83L5.03 20h7.94l8.44-8.44c.79-.78.79-2.04 0-2.83l-4.84-4.84c-.4-.39-.91-.59-1.43-.59zM6.45 18L4.03 15.58l8.56-8.56 2.42 2.42L6.45 18z"/>
+                    </svg>
+                </button>
+                <button id="text" class="tool" title="Text">
+                    <svg viewBox="0 0 24 24" width="24" height="24">
+                        <path d="M5 4v3h5.5v12h3V7H19V4z"/>
+                    </svg>
+                </button>
+                <button id="shapes" class="tool" title="Shapes">
+                    <svg viewBox="0 0 24 24" width="24" height="24">
+                        <path d="M11 18c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zm-2-8c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm6 4c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
+                    </svg>
+                </button>
+            </div>
+            
+            <div class="tool-group">
+                <input type="color" id="color-picker" value="#000000">
+                <select id="line-width">
+                    <option value="1">1px</option>
+                    <option value="3" selected>3px</option>
+                    <option value="5">5px</option>
+                    <option value="10">10px</option>
+                    <option value="15">15px</option>
+                </select>
+            </div>
+            
+            <div class="tool-group">
+                <button id="clear" class="action-btn" title="Clear Board">
+                    <svg viewBox="0 0 24 24" width="24" height="24">
+                        <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+                    </svg>
+                </button>
+                <button id="save" class="action-btn" title="Save Board">
+                    <svg viewBox="0 0 24 24" width="24" height="24">
+                        <path d="M17 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V7l-4-4zm-5 16c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm3-10H5V5h10v4z"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        
+        <div class="shapes-panel" id="shapes-panel">
+            <button class="shape-btn" data-shape="rectangle">Rectangle</button>
+            <button class="shape-btn" data-shape="circle">Circle</button>
+            <button class="shape-btn" data-shape="line">Line</button>
+            <button class="shape-btn" data-shape="triangle">Triangle</button>
+        </div>
+        
+        <div class="canvas-container">
+            <canvas id="board"></canvas>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
