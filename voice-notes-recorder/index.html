@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice Notes Recorder</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Voice Notes Recorder</h1>
+        
+        <div class="recorder-container">
+            <div class="recorder-controls">
+                <button id="record-btn" class="btn record-btn">
+                    <span class="record-icon"></span>
+                    <span class="btn-text">Record</span>
+                </button>
+                <div id="recording-status" class="recording-status">
+                    <span class="status-text">Click Record to start</span>
+                    <span id="timer" class="timer">00:00</span>
+                </div>
+            </div>
+            
+            <div class="visualizer-container">
+                <canvas id="visualizer" class="visualizer"></canvas>
+            </div>
+        </div>
+        
+        <div class="notes-container">
+            <h2>My Voice Notes</h2>
+            <div id="notes-list" class="notes-list">
+                <!-- Voice notes will be added here -->
+                <p class="empty-notes">No voice notes yet. Start recording!</p>
+            </div>
+        </div>
+        
+        <div class="info-panel">
+            <h3>How It Works</h3>
+            <div class="info-content">
+                <p>This app uses the Web Audio API to record and play back your voice notes.</p>
+                <ul>
+                    <li><strong>MediaRecorder API</strong>: Records audio from your microphone</li>
+                    <li><strong>AudioContext</strong>: Processes audio data and creates visualizations</li>
+                    <li><strong>localStorage</strong>: Saves your recordings between sessions</li>
+                </ul>
+                <p>Your recordings are stored locally on your device and are not sent to any server.</p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
