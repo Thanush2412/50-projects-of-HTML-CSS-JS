@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text to Speech Application</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Text to Speech Application</h1>
+        
+        <div class="card">
+            <div class="voice-controls">
+                <div class="form-group">
+                    <label for="voice-select" class="form-label">Voice</label>
+                    <select id="voice-select" class="form-control"></select>
+                </div>
+                <div class="range-container">
+                    <label for="rate">Rate</label>
+                    <input type="range" id="rate" class="range-slider" min="0.5" max="2" value="1" step="0.1">
+                    <span id="rate-value" class="range-value">1</span>
+                </div>
+                <div class="range-container">
+                    <label for="pitch">Pitch</label>
+                    <input type="range" id="pitch" class="range-slider" min="0" max="2" value="1" step="0.1">
+                    <span id="pitch-value" class="range-value">1</span>
+                </div>
+            </div>
+            
+            <div class="text-input-container form-group">
+                <label for="text-to-read" class="form-label">Text to Read</label>
+                <textarea id="text-to-read" class="form-control" placeholder="Enter text to be read aloud..."></textarea>
+                <div class="text-controls">
+                    <button id="speak-btn" class="btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                        Speak
+                    </button>
+                    <button id="pause-btn" class="btn secondary" disabled>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4" width="4" height="16"></rect><rect x="14" y="4" width="4" height="16"></rect></svg>
+                        Pause
+                    </button>
+                    <button id="resume-btn" class="btn secondary" disabled>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                        Resume
+                    </button>
+                    <button id="stop-btn" class="btn danger" disabled>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect></svg>
+                        Stop
+                    </button>
+                </div>
+            </div>
+            
+            <div class="preset-phrases">
+                <h3>Preset Phrases</h3>
+                <div class="phrases-grid">
+                    <button class="phrase-btn">Hello, how are you today?</button>
+                    <button class="phrase-btn">Welcome to the Web Speech API demo.</button>
+                    <button class="phrase-btn">This is a demonstration of speech synthesis.</button>
+                    <button class="phrase-btn">The weather is beautiful today.</button>
+                    <button class="phrase-btn">Thank you for your attention.</button>
+                    <button class="phrase-btn">Have a great day!</button>
+                </div>
+            </div>
+            
+            <div class="saved-texts">
+                <h3>Saved Texts</h3>
+                <ul id="saved-list" class="saved-list"></ul>
+                <div class="save-text-form">
+                    <input type="text" id="save-name" class="form-control" placeholder="Enter a name for this text">
+                    <button id="save-text" class="btn">Save Text</button>
+                    <button id="clear-saved" class="btn danger">Clear All</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
