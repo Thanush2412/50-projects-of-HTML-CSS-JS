@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Alerts - Grading Feedback</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Grading Feedback System</h1>
+            <p>Enter student grades and receive customized feedback</p>
+        </header>
+        
+        <main>
+            <section class="input-section">
+                <h2>Enter Student Information</h2>
+                <form id="grade-form">
+                    <div class="form-group">
+                        <label for="student-name">Student Name:</label>
+                        <input type="text" id="student-name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Subject:</label>
+                        <select id="subject" required>
+                            <option value="">Select a subject</option>
+                            <option value="math">Mathematics</option>
+                            <option value="science">Science</option>
+                            <option value="english">English</option>
+                            <option value="history">History</option>
+                            <option value="art">Art</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="grade">Grade (0-100):</label>
+                        <input type="number" id="grade" min="0" max="100" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="comments">Additional Comments:</label>
+                        <textarea id="comments" rows="3"></textarea>
+                    </div>
+                    
+                    <button type="submit" id="submit-btn">Generate Feedback</button>
+                </form>
+            </section>
+            
+            <section class="results-section">
+                <h2>Feedback History</h2>
+                <div id="feedback-history"></div>
+            </section>
+        </main>
+        
+        <section class="info-panel">
+            <h2>About This Project</h2>
+            <p>This project demonstrates the use of JavaScript Proxy objects to create reactive data models that automatically trigger UI updates.</p>
+            
+            <h3>New JavaScript Concepts:</h3>
+            <ul>
+                <li><strong>Proxy API:</strong> Creating reactive objects that intercept property access</li>
+                <li><strong>Reflect API:</strong> Performing operations on objects with built-in reflection methods</li>
+                <li><strong>Template Literals with Tags:</strong> Custom processing of template strings</li>
+            </ul>
+            
+            <h3>How It Works:</h3>
+            <p>When you submit a grade, the system uses a Proxy to track changes to the student data. This automatically triggers the appropriate alert style based on the grade range, without needing explicit conditional checks throughout the code.</p>
+        </section>
+    </div>
+    
+    <div id="alert-container"></div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
