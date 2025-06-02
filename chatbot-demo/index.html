@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Chatbot Demo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>School Helper Chatbot</h1>
+            <p>Ask me questions about the school!</p>
+        </header>
+        
+        <div class="chat-container">
+            <div class="chat-box" id="chat-box">
+                <div class="message bot">
+                    <div class="message-content">
+                        Hello! I'm the School Helper Bot. How can I assist you today?
+                    </div>
+                </div>
+            </div>
+            
+            <div class="input-area">
+                <input type="text" id="user-input" placeholder="Type your question here...">
+                <button id="send-btn">Send</button>
+            </div>
+            
+            <div class="sample-questions">
+                <h3>Sample Questions:</h3>
+                <ul>
+                    <li><button class="question-btn">What are the school hours?</button></li>
+                    <li><button class="question-btn">Where is the library?</button></li>
+                    <li><button class="question-btn">When is the next holiday?</button></li>
+                    <li><button class="question-btn">How do I join a club?</button></li>
+                    <li><button class="question-btn">Who is the principal?</button></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="info-panel">
+            <h2>About This Project</h2>
+            <p>This simple chatbot demonstrates basic pattern matching to respond to predefined questions. It uses JavaScript to process user input and display appropriate responses.</p>
+            
+            <h3>Features:</h3>
+            <ul>
+                <li>Pattern matching for common questions</li>
+                <li>Sample question buttons for easy testing</li>
+                <li>Chat interface with message history</li>
+                <li>Typing animation effect</li>
+            </ul>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
