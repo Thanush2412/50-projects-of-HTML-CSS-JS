@@ -122,9 +122,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 actionNote.className = 'compatibility-notice action-note';
                 actionNote.innerHTML = '<strong>Note:</strong> Action buttons are only displayed in the preview. They require Service Worker Registration to function in actual notifications.';
                 
-                // Add the note after the form
-                const form = document.getElementById('notificationForm');
-                form.parentNode.insertBefore(actionNote, form.nextSibling);
+                // Add the note after the notification controls section
+                const notificationControls = document.querySelector('.notification-controls');
+                if (notificationControls) {
+                    notificationControls.parentNode.insertBefore(actionNote, notificationControls.nextSibling);
+                } else {
+                    // Fallback - add to the container
+                    document.querySelector('.app-container').appendChild(actionNote);
+                }
                 
                 // Auto-remove after 8 seconds
                 setTimeout(() => {
