@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Comparison Slider</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Image Comparison Slider</h1>
+        
+        <div class="comparison-container">
+            <div class="image-container">
+                <img src="https://picsum.photos/id/1015/800/500" class="image-before" alt="Before Image">
+                <img src="https://picsum.photos/id/1015/800/500?grayscale" class="image-after" alt="After Image">
+            </div>
+            
+            <div class="slider-line">
+                <div class="slider-button">
+                    <i class="fas fa-arrows-alt-h"></i>
+                </div>
+            </div>
+        </div>
+        
+        <div class="controls">
+            <div class="control-group">
+                <label for="slider-position">Slider Position:</label>
+                <input type="range" id="slider-position" min="0" max="100" value="50">
+                <span id="position-value">50%</span>
+            </div>
+            
+            <div class="preset-images">
+                <h3>Example Comparisons</h3>
+                <div class="preset-buttons">
+                    <button data-before="https://picsum.photos/id/1018/800/500" data-after="https://picsum.photos/id/1018/800/500?grayscale">Mountain</button>
+                    <button data-before="https://picsum.photos/id/1019/800/500" data-after="https://picsum.photos/id/1019/800/500?blur=2">Blur Effect</button>
+                    <button data-before="https://picsum.photos/id/1016/800/500" data-after="https://picsum.photos/id/1016/800/500?grayscale&blur=1">Combined</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
