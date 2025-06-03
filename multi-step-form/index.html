@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-step Form with Validation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h1>Application Form</h1>
+            
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div class="progress" id="progress"></div>
+                    <div class="progress-step active" data-step="1">1</div>
+                    <div class="progress-step" data-step="2">2</div>
+                    <div class="progress-step" data-step="3">3</div>
+                    <div class="progress-step" data-step="4">4</div>
+                </div>
+            </div>
+            
+            <form id="multiStepForm">
+                <!-- Step 1: Personal Information -->
+                <div class="form-step active" data-step="1">
+                    <h2>Personal Information</h2>
+                    
+                    <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <input type="text" id="firstName" name="firstName" required minlength="2">
+                        <div class="error-message"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" id="lastName" name="lastName" required minlength="2">
+                        <div class="error-message"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                        <div class="error-message"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required>
+                        <div class="error-message"></div>
+                        <div class="hint">10-digit number without spaces or dashes</div>
+                    </div>
+                    
+                    <div class="buttons">
+                        <button type="button" class="btn next-btn">Next</button>
+                    </div>
+                </div>
+                
+                <!-- Step 2: Address Information -->
+                <div class="form-step" data-step="2">
+                    <h2>Address Information</h2>
+                    
+                    <div class="form-group">
+                        <label for="street">Street Address</label>
+                        <input type="text" id="street" name="street" required>
+                        <div class="error-message"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="city">City</label>
+                        <input type="text" id="city" name="city" required>
+                        <div class="error-message"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="state">State/Province</label>
+                        <input type="text" id="state" name="state" required>
+                        <div class="error-message"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="zipCode">Zip/Postal Code</label>
+                        <input type="text" id="zipCode" name="zipCode" pattern="[0-9]{5,6}" required>
+                        <div class="error-message"></div>
+                    </div>
+                    
+                    <div class="buttons">
+                        <button type="button" class="btn prev-btn">Previous</button>
+                        <button type="button" class="btn next-btn">Next</button>
+                    </div>
+                </div>
+                
+                <!-- Step 3: Account Information -->
+                <div class="form-step" data-step="3">
+                    <h2>Account Information</h2>
+                    
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" name="username" required minlength="5">
+                        <div class="error-message"></div>
+                        <div class="hint">Minimum 5 characters</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required minlength="8" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$">
+                        <div class="error-message"></div>
+                        <div class="hint">Minimum 8 characters, at least one uppercase letter, one lowercase letter, and one number</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm Password</label>
+                        <input type="password" id="confirmPassword" name="confirmPassword" required>
+                        <div class="error-message"></div>
+                    </div>
+                    
+                    <div class="buttons">
+                        <button type="button" class="btn prev-btn">Previous</button>
+                        <button type="button" class="btn next-btn">Next</button>
+                    </div>
+                </div>
+                
+                <!-- Step 4: Review & Submit -->
+                <div class="form-step" data-step="4">
+                    <h2>Review & Submit</h2>
+                    
+                    <div class="review-container">
+                        <div class="review-section">
+                            <h3>Personal Information</h3>
+                            <div id="reviewPersonal" class="review-data"></div>
+                        </div>
+                        
+                        <div class="review-section">
+                            <h3>Address Information</h3>
+                            <div id="reviewAddress" class="review-data"></div>
+                        </div>
+                        
+                        <div class="review-section">
+                            <h3>Account Information</h3>
+                            <div id="reviewAccount" class="review-data"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="checkbox-container">
+                            <input type="checkbox" id="termsAgreement" name="termsAgreement" required>
+                            <span class="checkmark"></span>
+                            I agree to the terms and conditions
+                        </label>
+                        <div class="error-message"></div>
+                    </div>
+                    
+                    <div class="buttons">
+                        <button type="button" class="btn prev-btn">Previous</button>
+                        <button type="submit" class="btn submit-btn">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        
+        <div class="success-message" id="successMessage">
+            <div class="success-content">
+                <svg class="success-checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                    <circle class="checkmark-circle" cx="26" cy="26" r="25" fill="none"/>
+                    <path class="checkmark-check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+                </svg>
+                <h2>Success!</h2>
+                <p>Your application has been submitted successfully.</p>
+                <button type="button" class="btn" id="resetBtn">Start Over</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
