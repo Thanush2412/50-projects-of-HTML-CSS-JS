@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Speed Test</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Typing Speed Test</h1>
+        
+        <div class="settings">
+            <div class="setting-group">
+                <label for="difficulty">Difficulty:</label>
+                <select id="difficulty">
+                    <option value="easy">Easy</option>
+                    <option value="medium" selected>Medium</option>
+                    <option value="hard">Hard</option>
+                </select>
+            </div>
+            <div class="setting-group">
+                <label for="time">Time (seconds):</label>
+                <select id="time">
+                    <option value="30">30</option>
+                    <option value="60" selected>60</option>
+                    <option value="120">120</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="timer">
+                <span id="time-display">60</span>
+                <span>seconds</span>
+            </div>
+            
+            <div class="stats">
+                <div class="stat">
+                    <span id="wpm">0</span>
+                    <span>WPM</span>
+                </div>
+                <div class="stat">
+                    <span id="cpm">0</span>
+                    <span>CPM</span>
+                </div>
+                <div class="stat">
+                    <span id="accuracy">100%</span>
+                    <span>Accuracy</span>
+                </div>
+            </div>
+            
+            <div class="text-display" id="text-display"></div>
+            
+            <textarea id="text-input" placeholder="Start typing when ready..."></textarea>
+            
+            <div class="buttons">
+                <button id="start-btn">Start Test</button>
+                <button id="reset-btn">Reset</button>
+            </div>
+        </div>
+        
+        <div class="history-section">
+            <h2>Your History</h2>
+            <div class="history-container">
+                <table id="history-table">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>WPM</th>
+                            <th>CPM</th>
+                            <th>Accuracy</th>
+                            <th>Difficulty</th>
+                        </tr>
+                    </thead>
+                    <tbody id="history-body">
+                        <!-- History entries will be added here -->
+                    </tbody>
+                </table>
+                <div id="no-history-message">No history yet. Complete a test to see your results!</div>
+            </div>
+            <button id="clear-history-btn">Clear History</button>
+        </div>
+    </div>
+    
+    <div class="result-modal" id="result-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Test Results</h2>
+            <div class="result-stats">
+                <div class="result-stat">
+                    <span id="result-wpm">0</span>
+                    <span>Words Per Minute</span>
+                </div>
+                <div class="result-stat">
+                    <span id="result-cpm">0</span>
+                    <span>Characters Per Minute</span>
+                </div>
+                <div class="result-stat">
+                    <span id="result-accuracy">100%</span>
+                    <span>Accuracy</span>
+                </div>
+            </div>
+            <div class="result-details">
+                <p>Correct words: <span id="correct-words">0</span></p>
+                <p>Incorrect words: <span id="incorrect-words">0</span></p>
+                <p>Time taken: <span id="time-taken">0</span> seconds</p>
+            </div>
+            <button id="try-again-btn">Try Again</button>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
