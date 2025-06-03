@@ -91,27 +91,14 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
         
-        const iconMap = {
-            'info': 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iIzI1NzVmYyIgZD0iTTEyIDJDNi40OCAyIDIgNi40OCAyIDEyczQuNDggMTAgMTAgMTAgMTAtNC40OCAxMC0xMFMxNy41MiAyIDEyIDJ6bTEgMTVoLTJWOWgydjZ6bTAtOGgtMlY3aDJ2MnoiLz48L3N2Zz4=',
-            'success': 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iIzI4YTc0NSIgZD0iTTEyIDJDNi40OCAyIDIgNi40OCAyIDEyczQuNDggMTAgMTAgMTAgMTAtNC40OCAxMC0xMFMxNy41MiAyIDEyIDJ6bS0yIDE1bC01LTUgMS40MS0xLjQxTDEwIDE0LjE3bDcuNTktNy41OUwxOSA4bC05IDl6Ii8+PC9zdmc+',
-            'warning': 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iI2ZmYzEwNyIgZD0iTTEgMjFoMjJMMTIgMiAxIDIxem0xMi0zaC0ydi0yaDJ2MnptMC00aC0yVjloMnY1eiIvPjwvc3ZnPg==',
-            'error': 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iI2RjMzU0NSIgZD0iTTEyIDJDNi40OCAyIDIgNi40OCAyIDEyczQuNDggMTAgMTAgMTAgMTAtNC40OCAxMC0xMFMxNy41MiAyIDEyIDJ6bTEgMTVoLTJ2LTJoMnYyem0wLTRoLTJWN2gydjZ6Ii8+PC9zdmc+',
-        };
-        
-        const notificationOptions = {
-            body: options.body,
-            icon: iconMap[options.icon] || iconMap['info'],
-            requireInteraction: options.requireInteraction,
-            silent: false,
-            timestamp: Date.now()
-        };
-        
-        if (options.actions && options.actions.length > 0) {
-            notificationOptions.actions = options.actions;
-        }
-        
         try {
-            const notification = new Notification(options.title, notificationOptions);
+            // Create notification without actions (they require Service Worker Registration)
+            const notification = new Notification(options.title, {
+                body: options.body,
+                icon: getIconPath(options.icon),
+                requireInteraction: options.requireInteraction
+                // actions removed as they require ServiceWorkerRegistration.showNotification()
+            });
             
             notification.onclick = function() {
                 window.focus();
@@ -123,7 +110,28 @@ document.addEventListener('DOMContentLoaded', () => {
                 logNotificationInteraction(options.title, 'closed');
             };
             
+            // Add to log and show in preview
             addToNotificationLog(options);
+            
+            // If actions were specified, show info about Service Worker requirement
+            if (options.actions && options.actions.length > 0) {
+                const existingNotes = document.querySelectorAll('.action-note');
+                existingNotes.forEach(note => note.remove());
+                
+                const actionNote = document.createElement('div');
+                actionNote.className = 'compatibility-notice action-note';
+                actionNote.innerHTML = '<strong>Note:</strong> Action buttons are only displayed in the preview. They require Service Worker Registration to function in actual notifications.';
+                
+                // Add the note after the form
+                const form = document.getElementById('notificationForm');
+                form.parentNode.insertBefore(actionNote, form.nextSibling);
+                
+                // Auto-remove after 8 seconds
+                setTimeout(() => {
+                    actionNote.style.opacity = '0';
+                    setTimeout(() => actionNote.remove(), 500);
+                }, 8000);
+            }
             
             return notification;
         } catch (error) {
@@ -269,12 +277,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     function handleSendNotification() {
-        const title = notificationTitle.value;
-        const body = notificationBody.value;
+        const title = notificationTitle.value || 'Notification Title';
+        const body = notificationBody.value || 'This is a notification message.';
         const icon = notificationIcon.value;
-        const delay = parseInt(notificationDelay.value) || 0;
         const interaction = requireInteraction.checked;
-        const actions = includeActions.checked ? [
+        const delay = parseInt(notificationDelay.value) || 0;
+        
+        // Actions are only shown in preview, not in actual notification
+        const showActions = includeActions.checked;
+        const actions = showActions ? [
             { action: 'action1', title: 'Action 1' },
             { action: 'action2', title: 'Action 2' }
         ] : [];
@@ -283,11 +294,11 @@ document.addEventListener('DOMContentLoaded', () => {
         
         setTimeout(() => {
             sendNotification({
-                title,
-                body,
-                icon,
+                title: title,
+                body: body,
+                icon: icon,
                 requireInteraction: interaction,
-                actions
+                actions: actions
             });
         }, delay * 1000);
     }
