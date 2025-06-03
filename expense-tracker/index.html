@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-wallet"></i> Expense Tracker</h1>
+        </header>
+        
+        <div class="dashboard">
+            <div class="balance-container">
+                <h2>Current Balance</h2>
+                <div class="balance" id="balance">$0.00</div>
+                <div class="income-expense">
+                    <div class="income">
+                        <h3><i class="fas fa-arrow-up"></i> Income</h3>
+                        <p id="income-total">$0.00</p>
+                    </div>
+                    <div class="expense">
+                        <h3><i class="fas fa-arrow-down"></i> Expenses</h3>
+                        <p id="expense-total">$0.00</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="budget-status" id="budget-status">
+                <div class="budget-indicator"></div>
+                <p class="budget-message">Set a monthly budget to track your spending</p>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="left-panel">
+                <div class="transaction-container">
+                    <h2><i class="fas fa-plus-circle"></i> New Transaction</h2>
+                    <form id="transaction-form">
+                        <div class="form-control">
+                            <label for="description">Description</label>
+                            <input type="text" id="description" placeholder="What was this transaction for?" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-control">
+                                <label for="amount">Amount</label>
+                                <input type="number" id="amount" placeholder="0.00" step="0.01" min="0.01" required>
+                            </div>
+                            <div class="form-control">
+                                <label for="type">Type</label>
+                                <select id="type" required>
+                                    <option value="income">Income</option>
+                                    <option value="expense">Expense</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-control">
+                            <label for="category">Category</label>
+                            <select id="category" required>
+                                <!-- Income categories -->
+                                <option value="salary" class="income-category">Salary</option>
+                                <option value="freelance" class="income-category">Freelance</option>
+                                <option value="investment" class="income-category">Investment</option>
+                                <option value="gift" class="income-category">Gift</option>
+                                <option value="refund" class="income-category">Refund</option>
+                                <option value="other-income" class="income-category">Other Income</option>
+                                
+                                <!-- Expense categories -->
+                                <option value="housing" class="expense-category">Housing</option>
+                                <option value="utilities" class="expense-category">Utilities</option>
+                                <option value="groceries" class="expense-category">Groceries</option>
+                                <option value="dining" class="expense-category">Dining Out</option>
+                                <option value="transportation" class="expense-category">Transportation</option>
+                                <option value="healthcare" class="expense-category">Healthcare</option>
+                                <option value="entertainment" class="expense-category">Entertainment</option>
+                                <option value="shopping" class="expense-category">Shopping</option>
+                                <option value="personal" class="expense-category">Personal Care</option>
+                                <option value="education" class="expense-category">Education</option>
+                                <option value="debt" class="expense-category">Debt Payment</option>
+                                <option value="subscription" class="expense-category">Subscriptions</option>
+                                <option value="other-expense" class="expense-category">Other Expense</option>
+                            </select>
+                        </div>
+                        <div class="form-control">
+                            <label for="date">Date</label>
+                            <input type="date" id="date" required>
+                        </div>
+                        <div class="form-control">
+                            <label for="notes">Notes (Optional)</label>
+                            <textarea id="notes" placeholder="Additional details about this transaction"></textarea>
+                        </div>
+                        <button type="submit" class="btn">Add Transaction</button>
+                    </form>
+                </div>
+
+                <div class="budget-form-container">
+                    <h3><i class="fas fa-chart-pie"></i> Set Monthly Budget</h3>
+                    <form id="budget-form">
+                        <div class="form-control">
+                            <label for="monthly-budget">Monthly Budget ($)</label>
+                            <input type="number" id="monthly-budget" placeholder="Enter your monthly budget" min="0" step="0.01">
+                        </div>
+                        <button type="submit" class="btn">Set Budget</button>
+                    </form>
+                    <button id="reset-btn" class="btn btn-reset"><i class="fas fa-trash"></i> Reset All Data</button>
+                </div>
+            </div>
+
+            <div class="right-panel">
+                <div class="tabs">
+                    <button class="tab-btn active" data-tab="history">History</button>
+                    <button class="tab-btn" data-tab="summary">Monthly Summary</button>
+                </div>
+
+                <div class="tab-content">
+                    <div class="tab-pane active" id="history-tab">
+                        <div class="history-container">
+                            <div class="history-header">
+                                <h2>Transaction History</h2>
+                                <div class="filter-controls">
+                                    <select id="filter-type">
+                                        <option value="all">All</option>
+                                        <option value="income">Income</option>
+                                        <option value="expense">Expense</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <ul id="transaction-list" class="list"></ul>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane" id="summary-tab">
+                        <div class="summary-container">
+                            <div class="month-selector">
+                                <button id="prev-month" class="btn-small"><i class="fas fa-chevron-left"></i></button>
+                                <span id="current-month">June 2025</span>
+                                <button id="next-month" class="btn-small"><i class="fas fa-chevron-right"></i></button>
+                            </div>
+                            
+                            <div class="summary-stats">
+                                <div class="summary-item">
+                                    <h3>Total Income</h3>
+                                    <p id="monthly-income">$0.00</p>
+                                </div>
+                                <div class="summary-item">
+                                    <h3>Total Expenses</h3>
+                                    <p id="monthly-expenses">$0.00</p>
+                                </div>
+                                <div class="summary-item">
+                                    <h3>Net Savings</h3>
+                                    <p id="monthly-savings">$0.00</p>
+                                </div>
+                            </div>
+                            
+                            <div class="budget-progress">
+                                <h3>Budget Progress</h3>
+                                <div class="progress-container">
+                                    <div class="progress-bar" id="budget-progress-bar"></div>
+                                </div>
+                                <div class="progress-labels">
+                                    <span id="budget-spent">$0.00</span>
+                                    <span id="budget-limit">$0.00</span>
+                                </div>
+                            </div>
+
+                            <div class="category-breakdown">
+                                <h3>Expense Breakdown</h3>
+                                <ul id="category-list" class="category-list"></ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

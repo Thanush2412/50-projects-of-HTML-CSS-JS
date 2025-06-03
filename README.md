@@ -266,41 +266,41 @@ This repository contains 50 simple and practical projects created using **HTML**
 - Technologies: HTML, CSS, JavaScript, Intersection Observer API.
 
 ### 41. Expense Tracker
-- Track daily expenses and calculate the total spending.
-- Technologies: HTML, CSS, JavaScript.
+- Track income and expenses with categories, date filtering, and visual summaries.
+- Technologies: HTML, CSS, JavaScript, localStorage.
 
-### 42. Recipe Finder
-- A recipe searcher based on ingredients entered by the user.
-- Technologies: HTML, CSS, JavaScript, API integration.
+### 42. Password Generator
+- Create secure passwords with customizable options for length and character types.
+- Technologies: HTML, CSS, JavaScript, Clipboard API.
 
-### 43. BMI Calculator
-- Calculate BMI (Body Mass Index) based on user inputs.
-- Technologies: HTML, CSS, JavaScript.
+### 43. Image Comparison Slider
+- Compare before/after images using an interactive slider.
+- Technologies: HTML, CSS, JavaScript, Touch Events.
 
-### 44. Pomodoro Timer
-- A timer that helps users manage their work time using the Pomodoro technique.
-- Technologies: HTML, CSS, JavaScript.
+### 44. Markdown Previewer
+- Convert markdown text to formatted HTML in real-time.
+- Technologies: HTML, CSS, JavaScript, Regular Expressions.
 
-### 45. Tip Calculator
-- Calculate the tip based on the bill amount and tip percentage.
-- Technologies: HTML, CSS, JavaScript.
+### 45. Typing Speed Test
+- Measure typing speed and accuracy with random text samples.
+- Technologies: HTML, CSS, JavaScript, Performance API.
 
-### 46. Guess the Number Game
-- A game where users try to guess a randomly generated number.
-- Technologies: HTML, CSS, JavaScript.
+### 46. Emoji Picker Component
+- Create a reusable emoji selector with categories and search.
+- Technologies: HTML, CSS, JavaScript, Unicode Characters.
 
-### 47. Tic Tac Toe Game
-- Classic Tic Tac Toe game for two players.
-- Technologies: HTML, CSS, JavaScript.
+### 47. Recipe Finder with Filters
+- Search recipes by ingredients with dietary and cuisine filters.
+- Technologies: HTML, CSS, JavaScript, Fetch API, Query Parameters.
 
-### 48. Memory Game
-- A game to test memory by matching pairs of cards.
-- Technologies: HTML, CSS, JavaScript.
+### 48. Interactive SVG Animation
+- Create interactive and animated SVG elements that respond to user actions.
+- Technologies: HTML, CSS, JavaScript, SVG, SMIL Animation.
 
-### 49. Photo Gallery
-- A photo gallery that displays images in a grid format.
-- Technologies: HTML, CSS, JavaScript.
+### 49. Multi-step Form with Validation
+- Create a multi-step form with progress indicator and field validation.
+- Technologies: HTML, CSS, JavaScript, Form Validation API.
 
-### 50. Simple Portfolio
-- A simple portfolio website showcasing personal projects and skills.
-- Technologies: HTML, CSS, JavaScript.
+### 50. Browser Notification System
+- Implement a permission-based notification system for web applications.
+- Technologies: HTML, CSS, JavaScript, Notification API, Permissions API.
