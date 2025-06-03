@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browser Notification System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="app-container">
+            <h1>Browser Notification System</h1>
+            
+            <div class="permission-section">
+                <h2>Notification Permissions</h2>
+                <div class="permission-status">
+                    <p>Current status: <span id="permissionStatus">checking...</span></p>
+                </div>
+                <button id="requestPermission" class="btn primary-btn">Request Permission</button>
+            </div>
+            
+            <div class="notification-controls">
+                <h2>Send Notification</h2>
+                
+                <div class="form-group">
+                    <label for="notificationTitle">Title</label>
+                    <input type="text" id="notificationTitle" placeholder="Notification Title" value="New Message">
+                </div>
+                
+                <div class="form-group">
+                    <label for="notificationBody">Message</label>
+                    <textarea id="notificationBody" placeholder="Notification message...">This is a test notification from your app!</textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="notificationIcon">Icon</label>
+                    <select id="notificationIcon">
+                        <option value="info">Info</option>
+                        <option value="success">Success</option>
+                        <option value="warning">Warning</option>
+                        <option value="error">Error</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="notificationDelay">Delay (seconds)</label>
+                    <input type="number" id="notificationDelay" min="0" max="60" value="0">
+                </div>
+                
+                <div class="form-group">
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="requireInteraction">
+                        <span class="checkmark"></span>
+                        Require interaction (notification won't auto-close)
+                    </label>
+                </div>
+                
+                <div class="form-group">
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="includeActions">
+                        <span class="checkmark"></span>
+                        Include action buttons
+                    </label>
+                </div>
+                
+                <button id="sendNotification" class="btn primary-btn">Send Notification</button>
+            </div>
+            
+            <div class="notification-log">
+                <h2>Notification History</h2>
+                <div class="log-controls">
+                    <button id="clearLog" class="btn secondary-btn">Clear Log</button>
+                </div>
+                <div id="notificationLog" class="log-container">
+                    <p class="empty-log">No notifications sent yet.</p>
+                </div>
+            </div>
+            
+            <div class="demo-section">
+                <h2>Demo Scenarios</h2>
+                <div class="scenario-buttons">
+                    <button id="demoMessage" class="btn scenario-btn">New Message</button>
+                    <button id="demoReminder" class="btn scenario-btn">Meeting Reminder</button>
+                    <button id="demoUpdate" class="btn scenario-btn">System Update</button>
+                    <button id="demoError" class="btn scenario-btn">Error Alert</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="info-container">
+            <h2>About Browser Notifications</h2>
+            <p>Browser notifications allow websites to send notifications to users even when the website is not open in the browser. This feature requires user permission for security and privacy reasons.</p>
+            
+            <h3>Features of this demo:</h3>
+            <ul>
+                <li>Request and manage notification permissions</li>
+                <li>Send custom notifications with various options</li>
+                <li>Include action buttons in notifications</li>
+                <li>Track notification history</li>
+                <li>Try pre-configured demo notifications</li>
+            </ul>
+            
+            <div class="compatibility-notice">
+                <h3>Compatibility Notice</h3>
+                <p>The Notification API is supported in most modern browsers but may have limited functionality in some mobile browsers. For best results, use Chrome, Firefox, or Edge on desktop.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="notification-preview" id="notificationPreview">
+        <div class="preview-header">
+            <div class="preview-icon" id="previewIcon">
+                <svg class="icon-svg info" viewBox="0 0 24 24">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"></path>
+                </svg>
+                <svg class="icon-svg success" viewBox="0 0 24 24">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"></path>
+                </svg>
+                <svg class="icon-svg warning" viewBox="0 0 24 24">
+                    <path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"></path>
+                </svg>
+                <svg class="icon-svg error" viewBox="0 0 24 24">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"></path>
+                </svg>
+            </div>
+            <div class="preview-app-name">App Name</div>
+            <div class="preview-time">now</div>
+        </div>
+        <div class="preview-content">
+            <div class="preview-title" id="previewTitle">Notification Title</div>
+            <div class="preview-body" id="previewBody">This is a preview of how your notification will appear.</div>
+        </div>
+        <div class="preview-actions" id="previewActions">
+            <button class="preview-action-btn">Action 1</button>
+            <button class="preview-action-btn">Action 2</button>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
