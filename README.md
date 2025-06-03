@@ -49,8 +49,8 @@ This repository contains 50 simple and practical projects created using **HTML**
 43. [Image Comparison Slider](#43-image-comparison-slider)
 44. [Markdown Previewer](#44-markdown-previewer)
 45. [Typing Speed Test](#45-typing-speed-test)
-46. [Emoji Picker Component](#46-emoji-picker-component)
-47. [Recipe Finder with Filters](#47-recipe-finder-with-filters)
+46. [Color Palette Generator](#46-color-palette-generator)
+47. [Code Snippet Manager](#47-code-snippet-manager)
 48. [Interactive SVG Animation](#48-interactive-svg-animation)
 49. [Multi-step Form with Validation](#49-multi-step-form-with-validation)
 50. [Simple Portfolio](#50-simple-portfolio)
@@ -285,13 +285,13 @@ This repository contains 50 simple and practical projects created using **HTML**
 - Measure typing speed and accuracy with random text samples.
 - Technologies: HTML, CSS, JavaScript, Performance API.
 
-### 46. Emoji Picker Component
-- Create a reusable emoji selector with categories and search.
-- Technologies: HTML, CSS, JavaScript, Unicode Characters.
+### 46. Color Palette Generator
+- Generate and export harmonious color schemes with multiple methods.
+- Technologies: HTML, CSS, JavaScript, Color manipulation, localStorage.
 
-### 47. Recipe Finder with Filters
-- Search recipes by ingredients with dietary and cuisine filters.
-- Technologies: HTML, CSS, JavaScript, Fetch API, Query Parameters.
+### 47. Code Snippet Manager
+- Save, organize, and search code snippets with syntax highlighting.
+- Technologies: HTML, CSS, JavaScript, localStorage, Prism.js.
 
 ### 48. Interactive SVG Animation
 - Create interactive and animated SVG elements that respond to user actions.
