@@ -115,27 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // If actions were specified, show info about Service Worker requirement
             if (options.actions && options.actions.length > 0) {
-                const existingNotes = document.querySelectorAll('.action-note');
-                existingNotes.forEach(note => note.remove());
-                
-                const actionNote = document.createElement('div');
-                actionNote.className = 'compatibility-notice action-note';
-                actionNote.innerHTML = '<strong>Note:</strong> Action buttons are only displayed in the preview. They require Service Worker Registration to function in actual notifications.';
-                
-                // Add the note after the notification controls section
-                const notificationControls = document.querySelector('.notification-controls');
-                if (notificationControls) {
-                    notificationControls.parentNode.insertBefore(actionNote, notificationControls.nextSibling);
-                } else {
-                    // Fallback - add to the container
-                    document.querySelector('.app-container').appendChild(actionNote);
-                }
-                
-                // Auto-remove after 8 seconds
-                setTimeout(() => {
-                    actionNote.style.opacity = '0';
-                    setTimeout(() => actionNote.remove(), 500);
-                }, 8000);
+                showCompatibilityNotice();
             }
             
             return notification;
@@ -143,6 +123,32 @@ document.addEventListener('DOMContentLoaded', () => {
             console.error('Error creating notification:', error);
             alert('There was an error creating the notification: ' + error.message);
         }
+    }
+    
+    function showCompatibilityNotice() {
+        // Remove any existing notices first
+        const existingNotes = document.querySelectorAll('.action-note');
+        existingNotes.forEach(note => note.remove());
+        
+        // Create the notice element
+        const actionNote = document.createElement('div');
+        actionNote.className = 'compatibility-notice action-note';
+        actionNote.innerHTML = '<strong>Note:</strong> Action buttons are only displayed in the preview. They require Service Worker Registration to function in actual notifications.';
+        
+        // Add to the app container (safest option)
+        const appContainer = document.querySelector('.app-container');
+        if (appContainer) {
+            appContainer.appendChild(actionNote);
+        } else {
+            // Ultimate fallback - add to body
+            document.body.appendChild(actionNote);
+        }
+        
+        // Auto-remove after 8 seconds
+        setTimeout(() => {
+            actionNote.style.opacity = '0';
+            setTimeout(() => actionNote.remove(), 500);
+        }, 8000);
     }
     
     function addToNotificationLog(options) {
@@ -214,6 +220,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     function getIconPath(iconType) {
+        // Base64 encoded SVG icons with macOS colors
         const iconMap = {
             'info': 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iIzAwNzFlMyIgZD0iTTEyIDJDNi40OCAyIDIgNi40OCAyIDEyczQuNDggMTAgMTAgMTAgMTAtNC40OCAxMC0xMFMxNy41MiAyIDEyIDJ6bTEgMTVoLTJWOWgydjZ6bTAtOGgtMlY3aDJ2MnoiLz48L3N2Zz4=',
             'success': 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iIzM0Yzc1OSIgZD0iTTEyIDJDNi40OCAyIDIgNi40OCAyIDEyczQuNDggMTAgMTAgMTAgMTAtNC40OCAxMC0xMFMxNy41MiAyIDEyIDJ6bS0yIDE1bC01LTUgMS40MS0xLjQxTDEwIDE0LjE3bDcuNTktNy41OUwxOSA4bC05IDl6Ii8+PC9zdmc+',
@@ -256,19 +263,28 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     function updatePreview() {
-        const title = notificationTitle.value;
-        const body = notificationBody.value;
+        const title = notificationTitle.value || 'Notification Title';
+        const body = notificationBody.value || 'This is a notification message.';
         const icon = notificationIcon.value;
         const showActions = includeActions.checked;
         
-        previewTitle.textContent = title;
-        previewBody.textContent = body;
-        previewIcon.setAttribute('data-icon', icon);
+        updatePreviewWithOptions({
+            title: title,
+            body: body,
+            icon: icon,
+            actions: showActions ? [{ action: 'action1', title: 'Action 1' }, { action: 'action2', title: 'Action 2' }] : []
+        });
+    }
+    
+    function updatePreviewWithOptions(options) {
+        if (!notificationPreview) return;
         
-        if (showActions) {
-            previewActions.style.display = 'flex';
-        } else {
-            previewActions.style.display = 'none';
+        if (previewTitle) previewTitle.textContent = options.title;
+        if (previewBody) previewBody.textContent = options.body;
+        if (previewIcon) previewIcon.setAttribute('data-icon', options.icon);
+        
+        if (previewActions) {
+            previewActions.style.display = options.actions && options.actions.length > 0 ? 'flex' : 'none';
         }
         
         notificationPreview.classList.add('show');
@@ -306,55 +322,86 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     function handleDemoMessage() {
-        sendNotification({
-            title: 'New Message',
-            body: 'You have received a new message from John Doe.',
-            icon: 'info',
-            requireInteraction: false,
-            actions: [
-                { action: 'reply', title: 'Reply' },
-                { action: 'dismiss', title: 'Dismiss' }
-            ]
-        });
+        try {
+            const options = {
+                title: 'New Message',
+                body: 'You have received a new message from John Doe.',
+                icon: 'info',
+                requireInteraction: false,
+                actions: [
+                    { action: 'reply', title: 'Reply' },
+                    { action: 'dismiss', title: 'Dismiss' }
+                ]
+            };
+            
+            // Show in preview
+            updatePreviewWithOptions(options);
+            
+            // Send actual notification
+            sendNotification(options);
+        } catch (error) {
+            console.error('Error in demo message:', error);
+        }
     }
     
     function handleDemoReminder() {
-        sendNotification({
-            title: 'Meeting Reminder',
-            body: 'Your team meeting starts in 15 minutes.',
-            icon: 'warning',
-            requireInteraction: true,
-            actions: [
-                { action: 'join', title: 'Join Now' },
-                { action: 'snooze', title: 'Snooze' }
-            ]
-        });
+        try {
+            const options = {
+                title: 'Meeting Reminder',
+                body: 'Your team meeting starts in 15 minutes.',
+                icon: 'warning',
+                requireInteraction: true,
+                actions: [
+                    { action: 'join', title: 'Join Now' },
+                    { action: 'snooze', title: 'Snooze' }
+                ]
+            };
+            
+            updatePreviewWithOptions(options);
+            sendNotification(options);
+        } catch (error) {
+            console.error('Error in demo reminder:', error);
+        }
     }
     
     function handleDemoUpdate() {
-        sendNotification({
-            title: 'System Update',
-            body: 'A new version of the application is available. Click to update now.',
-            icon: 'success',
-            requireInteraction: false,
-            actions: [
-                { action: 'update', title: 'Update Now' },
-                { action: 'later', title: 'Later' }
-            ]
-        });
+        try {
+            const options = {
+                title: 'System Update',
+                body: 'A new version of the application is available. Click to update now.',
+                icon: 'success',
+                requireInteraction: false,
+                actions: [
+                    { action: 'update', title: 'Update Now' },
+                    { action: 'later', title: 'Later' }
+                ]
+            };
+            
+            updatePreviewWithOptions(options);
+            sendNotification(options);
+        } catch (error) {
+            console.error('Error in demo update:', error);
+        }
     }
     
     function handleDemoError() {
-        sendNotification({
-            title: 'Error Alert',
-            body: 'There was an error processing your last request. Please try again.',
-            icon: 'error',
-            requireInteraction: true,
-            actions: [
-                { action: 'retry', title: 'Retry' },
-                { action: 'help', title: 'Get Help' }
-            ]
-        });
+        try {
+            const options = {
+                title: 'Error Alert',
+                body: 'There was an error processing your last request. Please try again.',
+                icon: 'error',
+                requireInteraction: true,
+                actions: [
+                    { action: 'retry', title: 'Retry' },
+                    { action: 'help', title: 'Get Help' }
+                ]
+            };
+            
+            updatePreviewWithOptions(options);
+            sendNotification(options);
+        } catch (error) {
+            console.error('Error in demo error alert:', error);
+        }
     }
     
     function clearNotificationLog() {
