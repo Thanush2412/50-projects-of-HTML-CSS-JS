@@ -1,0 +1,424 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Base colors */
+    --primary-color: #746980;
+    --secondary-color: #2575fc;
+    --text-color: #333;
+    --container-bg: rgba(255, 255, 255, 0.95);
+    
+    /* Key styles */
+    --key-bg: #ffffff;
+    --key-border: rgba(0, 0, 0, 0.08);
+    --key-text: #333;
+    --key-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --key-active: rgba(106, 17, 203, 0.1);
+    --key-hover: rgba(106, 17, 203, 0.05);
+    
+    /* Keyboard styles */
+    --keyboard-bg: rgba(245, 245, 245, 0.8);
+    --keyboard-border: rgba(0, 0, 0, 0.05);
+    --keyboard-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    
+    /* Special key styles */
+    --special-key-bg: rgba(37, 117, 252, 0.1);
+    --special-key-text: #2575fc;
+    --special-key-active: rgba(37, 117, 252, 0.2);
+    
+    /* Animation speeds */
+    --transition-fast: 0.15s;
+    --transition-medium: 0.25s;
+    --transition-slow: 0.5s;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: var(--text-color);
+}
+
+.container {
+    max-width: 900px;
+    width: 100%;
+    background-color: var(--container-bg);
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: var(--primary-color);
+    font-size: 2.2rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+h1::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+    border-radius: 2px;
+}
+
+.text-input {
+    margin-bottom: 25px;
+}
+
+textarea {
+    width: 100%;
+    height: 150px;
+    padding: 18px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    font-size: 1.1rem;
+    resize: none;
+    outline: none;
+    transition: all var(--transition-medium) ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 4px 12px rgba(106, 17, 203, 0.15);
+    background-color: #ffffff;
+}
+
+.keyboard-options {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+    gap: 15px;
+    background-color: rgba(245, 245, 245, 0.6);
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid var(--keyboard-border);
+}
+
+.option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.option label {
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+select {
+    padding: 8px 15px;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    outline: none;
+    cursor: pointer;
+    background-color: white;
+    font-size: 0.9rem;
+    transition: all var(--transition-fast) ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+select:focus, select:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 2px 8px rgba(106, 17, 203, 0.1);
+}
+
+input[type="checkbox"] {
+    appearance: none;
+    width: 40px;
+    height: 20px;
+    background-color: #ddd;
+    border-radius: 20px;
+    position: relative;
+    cursor: pointer;
+    transition: all var(--transition-fast) ease;
+}
+
+input[type="checkbox"]::before {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    top: 2px;
+    left: 2px;
+    background-color: white;
+    transition: all var(--transition-fast) ease;
+}
+
+input[type="checkbox"]:checked {
+    background-color: var(--secondary-color);
+}
+
+input[type="checkbox"]:checked::before {
+    transform: translateX(20px);
+}
+
+.keyboard {
+    background-color: var(--keyboard-bg);
+    border-radius: 16px;
+    padding: 20px;
+    user-select: none;
+    box-shadow: var(--keyboard-shadow);
+    border: 1px solid var(--keyboard-border);
+    transition: all var(--transition-medium) ease;
+}
+
+.keyboard-row {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 12px;
+}
+
+.keyboard-row:last-child {
+    margin-bottom: 0;
+}
+
+.key {
+    min-width: 45px;
+    height: 50px;
+    margin: 4px;
+    border-radius: 10px;
+    background-color: var(--key-bg);
+    border: 1px solid var(--key-border);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: var(--key-shadow);
+    transition: all var(--transition-fast) ease;
+    position: relative;
+    color: var(--key-text);
+    font-size: 1rem;
+    font-weight: 500;
+    overflow: hidden;
+}
+
+.key::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at center, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%);
+    opacity: 0;
+    transition: opacity var(--transition-fast) ease;
+}
+
+.key:hover {
+    background-color: var(--key-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.key:active, .key.active {
+    background-color: var(--key-active);
+    transform: translateY(2px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.key:active::after, .key.pressed::after {
+    opacity: 1;
+}
+
+.key .shifted {
+    position: absolute;
+    top: 6px;
+    left: 8px;
+    font-size: 0.7rem;
+    opacity: 0.7;
+    font-weight: 400;
+}
+
+.key.special {
+    background-color: var(--special-key-bg);
+    color: var(--special-key-text);
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.key.special:active, .key.special.active {
+    background-color: var(--special-key-active);
+}
+
+.key.space {
+    width: 350px;
+    border-radius: 20px;
+}
+
+.key.wide {
+    min-width: 65px;
+}
+
+.key.extra-wide {
+    min-width: 85px;
+}
+
+.key.caps.active {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.keyboard-info {
+    margin-top: 25px;
+    text-align: center;
+    font-size: 0.95rem;
+    color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(245, 245, 245, 0.6);
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid var(--keyboard-border);
+}
+
+.key-info {
+    display: inline-block;
+    padding: 3px 10px;
+    background-color: var(--special-key-bg);
+    color: var(--special-key-text);
+    border-radius: 6px;
+    margin: 0 4px;
+    font-weight: 500;
+}
+
+/* Themes */
+.keyboard.dark {
+    --key-bg: #333;
+    --key-border: #444;
+    --key-text: #fff;
+    --key-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    --key-active: rgba(255, 255, 255, 0.1);
+    --key-hover: rgba(255, 255, 255, 0.05);
+    --keyboard-bg: #222;
+    --keyboard-border: #444;
+    --special-key-bg: rgba(37, 117, 252, 0.3);
+    --special-key-text: #bbdefb;
+    --special-key-active: rgba(37, 117, 252, 0.4);
+}
+
+.keyboard.blue {
+    --key-bg: #e3f2fd;
+    --key-border: #bbdefb;
+    --key-text: #1976d2;
+    --key-shadow: 0 4px 6px rgba(25, 118, 210, 0.1);
+    --key-active: rgba(25, 118, 210, 0.1);
+    --key-hover: rgba(25, 118, 210, 0.05);
+    --keyboard-bg: #f5f9ff;
+    --keyboard-border: #bbdefb;
+    --special-key-bg: rgba(25, 118, 210, 0.2);
+    --special-key-text: #1565c0;
+    --special-key-active: rgba(25, 118, 210, 0.3);
+}
+
+.keyboard.gradient {
+    --key-bg: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    --key-border: #c3cfe2;
+    --key-text: #4a6fa5;
+    --key-shadow: 0 4px 6px rgba(74, 111, 165, 0.1);
+    --key-active: rgba(74, 111, 165, 0.1);
+    --key-hover: rgba(74, 111, 165, 0.05);
+    --keyboard-bg: #f5f7fa;
+    --keyboard-border: #c3cfe2;
+    --special-key-bg: linear-gradient(135deg, #c3cfe2 0%, #a1bdea 100%);
+    --special-key-text: #4a6fa5;
+    --special-key-active: rgba(74, 111, 165, 0.2);
+}
+
+/* Key press animation */
+@keyframes keyPress {
+    0% { transform: scale(1); }
+    50% { transform: scale(0.92); }
+    100% { transform: scale(1); }
+}
+
+@keyframes ripple {
+    0% { transform: scale(0); opacity: 1; }
+    100% { transform: scale(2.5); opacity: 0; }
+}
+
+.key.pressed {
+    animation: keyPress var(--transition-fast) ease;
+}
+
+.key.pressed::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    animation: ripple 0.6s ease-out;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+        border-radius: 15px;
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+    }
+    
+    .key {
+        min-width: 32px;
+        height: 42px;
+        margin: 3px;
+        font-size: 0.85rem;
+        border-radius: 8px;
+    }
+    
+    .key.space {
+        width: 180px;
+    }
+    
+    .key.wide {
+        min-width: 48px;
+    }
+    
+    .key.extra-wide {
+        min-width: 65px;
+    }
+    
+    .keyboard-options {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 12px;
+    }
+    
+    .keyboard {
+        padding: 12px;
+        border-radius: 12px;
+    }
+    
+    .keyboard-row {
+        margin-bottom: 8px;
+    }
+}

@@ -50,7 +50,7 @@ This repository contains 50 simple and practical projects created using **HTML**
 44. [Markdown Previewer](#44-markdown-previewer)
 45. [Typing Speed Test](#45-typing-speed-test)
 46. [Color Palette Generator](#46-color-palette-generator)
-47. [Code Snippet Manager](#47-code-snippet-manager)
+47. [Virtual Keyboard](#47-virtual-keyboard)
 48. [Interactive SVG Animation](#48-interactive-svg-animation)
 49. [Multi-step Form with Validation](#49-multi-step-form-with-validation)
 50. [Simple Portfolio](#50-simple-portfolio)
@@ -289,9 +289,9 @@ This repository contains 50 simple and practical projects created using **HTML**
 - Generate and export harmonious color schemes with multiple methods.
 - Technologies: HTML, CSS, JavaScript, Color manipulation, localStorage.
 
-### 47. Code Snippet Manager
-- Save, organize, and search code snippets with syntax highlighting.
-- Technologies: HTML, CSS, JavaScript, localStorage, Prism.js.
+### 47. Virtual Keyboard
+- Create an interactive on-screen keyboard with multiple layouts and themes.
+- Technologies: HTML, CSS, JavaScript, DOM manipulation, Event handling.
 
 ### 48. Interactive SVG Animation
 - Create interactive and animated SVG elements that respond to user actions.
